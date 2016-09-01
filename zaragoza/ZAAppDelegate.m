@@ -6,13 +6,13 @@
 //  Copyright © 2016 Sven Straubinger. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "ZAAppDelegate.h"
 
-@interface AppDelegate ()
+@interface ZAAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation ZAAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
