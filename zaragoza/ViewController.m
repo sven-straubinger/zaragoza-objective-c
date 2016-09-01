@@ -12,6 +12,8 @@ static NSString *kCellIdentifierDefault = @"CellIdentifierDefault";
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
+@property(nonatomic, weak) IBOutlet UITableView *tableView;
+
 @end
 
 @implementation ViewController
