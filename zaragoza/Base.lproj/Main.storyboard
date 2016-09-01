@@ -20,7 +20,7 @@
             </objects>
             <point key="canvasLocation" x="-484" y="356"/>
         </scene>
-        <!--Overview View Controller-->
+        <!--Zaragoza's bus stops-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ZAOverviewViewController" sceneMemberID="viewController">
@@ -72,7 +72,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xCG-tZ-FUt" secondAttribute="bottom" id="p9s-T1-bNg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="k2e-S9-xfO"/>
+                    <navigationItem key="navigationItem" title="Zaragoza's bus stops" id="k2e-S9-xfO"/>
                     <connections>
                         <outlet property="tableView" destination="xCG-tZ-FUt" id="xKc-bP-TJS"/>
                     </connections>
