@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		262861F31D781D7B004FBBC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 262861F21D781D7B004FBBC5 /* main.m */; };
 		262861F61D781D7B004FBBC5 /* ZAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 262861F51D781D7B004FBBC5 /* ZAAppDelegate.m */; };
-		262861F91D781D7B004FBBC5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262861F81D781D7B004FBBC5 /* ViewController.m */; };
+		262861F91D781D7B004FBBC5 /* ZAOverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262861F81D781D7B004FBBC5 /* ZAOverviewViewController.m */; };
 		262861FC1D781D7B004FBBC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262861FA1D781D7B004FBBC5 /* Main.storyboard */; };
 		262861FE1D781D7B004FBBC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 262861FD1D781D7B004FBBC5 /* Assets.xcassets */; };
 		262862011D781D7B004FBBC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262861FF1D781D7B004FBBC5 /* LaunchScreen.storyboard */; };
@@ -41,8 +41,8 @@
 		262861F21D781D7B004FBBC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		262861F41D781D7B004FBBC5 /* ZAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZAAppDelegate.h; sourceTree = "<group>"; };
 		262861F51D781D7B004FBBC5 /* ZAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZAAppDelegate.m; sourceTree = "<group>"; };
-		262861F71D781D7B004FBBC5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		262861F81D781D7B004FBBC5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		262861F71D781D7B004FBBC5 /* ZAOverviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZAOverviewViewController.h; sourceTree = "<group>"; };
+		262861F81D781D7B004FBBC5 /* ZAOverviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZAOverviewViewController.m; sourceTree = "<group>"; };
 		262861FB1D781D7B004FBBC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		262861FD1D781D7B004FBBC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		262862001D781D7B004FBBC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -162,8 +162,8 @@
 		26DBD3FC1D78325300A4630A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				262861F71D781D7B004FBBC5 /* ViewController.h */,
-				262861F81D781D7B004FBBC5 /* ViewController.m */,
+				262861F71D781D7B004FBBC5 /* ZAOverviewViewController.h */,
+				262861F81D781D7B004FBBC5 /* ZAOverviewViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -367,7 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26DBD3FF1D7836EB00A4630A /* ZAStopTableViewCell.m in Sources */,
-				262861F91D781D7B004FBBC5 /* ViewController.m in Sources */,
+				262861F91D781D7B004FBBC5 /* ZAOverviewViewController.m in Sources */,
 				262861F61D781D7B004FBBC5 /* ZAAppDelegate.m in Sources */,
 				262861F31D781D7B004FBBC5 /* main.m in Sources */,
 			);

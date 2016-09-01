@@ -6,17 +6,17 @@
 //  Copyright © 2016 Sven Straubinger. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ZAOverviewViewController.h"
 
 static NSString *kCellIdentifier = @"StopTableViewCell";
 
-@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface ZAOverviewViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property(nonatomic, weak) IBOutlet UITableView *tableView;
 
 @end
 
-@implementation ViewController
+@implementation ZAOverviewViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
