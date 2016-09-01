@@ -7,6 +7,7 @@
 //
 
 #import "ZAOverviewViewController.h"
+#import "ZABusStop.h"
 
 static NSString *kCellIdentifier = @"StopTableViewCell";
 
@@ -23,6 +24,12 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
     [super viewDidLoad];
     
     self.stops = [[NSMutableArray alloc]init];
+    
+    // Setup sample data
+    ZABusStop *s1 = [[ZABusStop alloc]init];
+    ZABusStop *s2 = [[ZABusStop alloc]init];
+    ZABusStop *s3 = [[ZABusStop alloc]init];
+    [self.stops addObjectsFromArray:@[s1, s2, s3]];
 }
 
 - (void)didReceiveMemoryWarning {
