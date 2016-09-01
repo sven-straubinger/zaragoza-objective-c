@@ -27,10 +27,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="aW0-7Y-2bf">
-                                                    <rect key="frame" x="510" y="-1" width="90" height="90"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="aW0-7Y-2bf">
+                                                    <rect key="frame" x="510" y="0.0" width="90" height="90"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="90" id="VOi-5G-5Zr"/>
+                                                        <constraint firstAttribute="width" constant="90" id="xCc-l9-jSL"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="aW0-7Y-2bf" secondAttribute="trailing" id="fEp-b8-Hn9"/>
+                                                <constraint firstItem="aW0-7Y-2bf" firstAttribute="top" secondItem="l6w-LG-VVb" secondAttribute="top" id="m3f-Wf-WkB"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
