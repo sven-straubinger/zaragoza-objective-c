@@ -119,7 +119,6 @@
 				26DBD3FB1D78324E00A4630A /* Views */,
 				26DBD3FC1D78325300A4630A /* ViewControllers */,
 				26DBD4041D78882200A4630A /* Models */,
-				26DBD4001D783EF800A4630A /* Resources */,
 				262861FA1D781D7B004FBBC5 /* Main.storyboard */,
 				262861FD1D781D7B004FBBC5 /* Assets.xcassets */,
 				262861FF1D781D7B004FBBC5 /* LaunchScreen.storyboard */,
@@ -171,13 +170,6 @@
 				262861F81D781D7B004FBBC5 /* ZAOverviewViewController.m */,
 			);
 			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		26DBD4001D783EF800A4630A /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		26DBD4041D78882200A4630A /* Models */ = {
