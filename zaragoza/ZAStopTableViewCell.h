@@ -10,4 +10,9 @@
 
 @interface ZAStopTableViewCell : UITableViewCell
 
+@property(nonatomic, weak) IBOutlet UILabel *identifierLabel;
+@property(nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property(nonatomic, weak) IBOutlet UILabel *etaLabel;
+@property(nonatomic, weak) IBOutlet UIImageView *mapImageView;
+
 @end
