@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+static NSString *kCellIdentifierDefault = @"CellIdentifierDefault";
+
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @end
@@ -34,10 +36,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    static NSString *CellIdentifier = @"CellIdentifier";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifierDefault
                                                             forIndexPath:indexPath];
     return cell;
 }
