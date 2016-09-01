@@ -8,6 +8,7 @@
 
 #import "ZAOverviewViewController.h"
 #import "ZABusStop.h"
+#import "ZAStopTableViewCell.h"
 
 static NSString *kCellIdentifier = @"StopTableViewCell";
 
@@ -48,7 +49,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier
+    ZAStopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier
                                                             forIndexPath:indexPath];
     return cell;
 }
