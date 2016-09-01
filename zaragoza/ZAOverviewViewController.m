@@ -13,6 +13,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
 @interface ZAOverviewViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property(nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *stops;
 
 @end
 
@@ -20,6 +21,8 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.stops = [[NSMutableArray alloc]init];
 }
 
 - (void)didReceiveMemoryWarning {
