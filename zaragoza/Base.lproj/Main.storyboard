@@ -43,7 +43,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="aW0-7Y-2bf">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="aW0-7Y-2bf">
                                                     <rect key="frame" x="510" y="0.0" width="90" height="90"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="90" id="VOi-5G-5Zr"/>
@@ -83,6 +83,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="placeholder.png" width="90" height="90"/>
+        <image name="placeholder" width="90" height="90"/>
     </resources>
 </document>
