@@ -110,8 +110,8 @@
 			children = (
 				262861F41D781D7B004FBBC5 /* AppDelegate.h */,
 				262861F51D781D7B004FBBC5 /* AppDelegate.m */,
-				262861F71D781D7B004FBBC5 /* ViewController.h */,
-				262861F81D781D7B004FBBC5 /* ViewController.m */,
+				26DBD3FB1D78324E00A4630A /* Views */,
+				26DBD3FC1D78325300A4630A /* ViewControllers */,
 				262861FA1D781D7B004FBBC5 /* Main.storyboard */,
 				262861FD1D781D7B004FBBC5 /* Assets.xcassets */,
 				262861FF1D781D7B004FBBC5 /* LaunchScreen.storyboard */,
@@ -145,6 +145,22 @@
 				262862181D781D7B004FBBC5 /* Info.plist */,
 			);
 			path = zaragozaUITests;
+			sourceTree = "<group>";
+		};
+		26DBD3FB1D78324E00A4630A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		26DBD3FC1D78325300A4630A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				262861F71D781D7B004FBBC5 /* ViewController.h */,
+				262861F81D781D7B004FBBC5 /* ViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		D6FD18ABB99B1C8FB98E8F24 /* Pods */ = {
