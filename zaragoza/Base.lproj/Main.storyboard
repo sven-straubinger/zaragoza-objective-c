@@ -74,6 +74,12 @@
                                                 <constraint firstItem="aW0-7Y-2bf" firstAttribute="top" secondItem="l6w-LG-VVb" secondAttribute="top" id="m3f-Wf-WkB"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="etaLabel" destination="5lj-Md-n8w" id="n1R-Il-8Z5"/>
+                                            <outlet property="idLabel" destination="cjH-xN-QAP" id="2mE-DZ-7d4"/>
+                                            <outlet property="mapImageView" destination="aW0-7Y-2bf" id="lNv-Xu-A8t"/>
+                                            <outlet property="nameLabel" destination="h8m-xK-R1e" id="ZFE-aJ-KoX"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

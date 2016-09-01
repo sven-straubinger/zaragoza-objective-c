@@ -8,6 +8,15 @@
 
 #import "ZAStopTableViewCell.h"
 
+@interface ZAStopTableViewCell()
+
+@property(nonatomic, weak) IBOutlet UILabel* idLabel;
+@property(nonatomic, weak) IBOutlet UILabel* nameLabel;
+@property(nonatomic, weak) IBOutlet UILabel* etaLabel;
+@property(nonatomic, weak) IBOutlet UIImageView* mapImageView;
+
+@end
+
 @implementation ZAStopTableViewCell
 
 - (void)awakeFromNib {
