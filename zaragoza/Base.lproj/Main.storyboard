@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="68W-15-E7M">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Rie-rc-Yik">
+            <objects>
+                <navigationController id="68W-15-E7M" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IV6-J1-OZb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TR7-G5-q4v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QJm-gE-PSI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-484" y="356"/>
+        </scene>
         <!--Overview View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -17,11 +33,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xCG-tZ-FUt">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StopTableViewCell" rowHeight="90" id="YW1-xA-PLD" customClass="ZAStopTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="90"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YW1-xA-PLD" id="l6w-LG-VVb">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="89.5"/>
@@ -50,12 +66,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xCG-tZ-FUt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ejA-Hl-X7t"/>
-                            <constraint firstItem="xCG-tZ-FUt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="frR-DD-Qzj"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xCG-tZ-FUt" secondAttribute="bottom" id="jaW-WW-RVW"/>
-                            <constraint firstAttribute="trailing" secondItem="xCG-tZ-FUt" secondAttribute="trailing" id="wul-R1-XOs"/>
+                            <constraint firstAttribute="trailing" secondItem="xCG-tZ-FUt" secondAttribute="trailing" id="g3J-F7-Vqs"/>
+                            <constraint firstItem="xCG-tZ-FUt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="lcs-cZ-r3u"/>
+                            <constraint firstItem="xCG-tZ-FUt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="m4o-2X-hOA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xCG-tZ-FUt" secondAttribute="bottom" id="p9s-T1-bNg"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="k2e-S9-xfO"/>
                     <connections>
                         <outlet property="tableView" destination="xCG-tZ-FUt" id="xKc-bP-TJS"/>
                     </connections>
