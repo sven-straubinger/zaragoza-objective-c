@@ -10,4 +10,8 @@
 
 @interface ZABusStop : NSObject
 
+@property (nonatomic) NSString *identifier;
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSString *eta;
+
 @end
