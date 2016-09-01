@@ -15,6 +15,7 @@
 		262862011D781D7B004FBBC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262861FF1D781D7B004FBBC5 /* LaunchScreen.storyboard */; };
 		2628620C1D781D7B004FBBC5 /* zaragozaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2628620B1D781D7B004FBBC5 /* zaragozaTests.m */; };
 		262862171D781D7B004FBBC5 /* zaragozaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 262862161D781D7B004FBBC5 /* zaragozaUITests.m */; };
+		26DBD3FF1D7836EB00A4630A /* ZAStopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DBD3FE1D7836EB00A4630A /* ZAStopTableViewCell.m */; };
 		DE95BEC29BEFFA6040DE21C7 /* libPods-zaragoza.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 285F8E3FB3DD02E0ABC6376D /* libPods-zaragoza.a */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,8 @@
 		262862121D781D7B004FBBC5 /* zaragozaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = zaragozaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		262862161D781D7B004FBBC5 /* zaragozaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = zaragozaUITests.m; sourceTree = "<group>"; };
 		262862181D781D7B004FBBC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26DBD3FD1D7836EB00A4630A /* ZAStopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAStopTableViewCell.h; sourceTree = "<group>"; };
+		26DBD3FE1D7836EB00A4630A /* ZAStopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAStopTableViewCell.m; sourceTree = "<group>"; };
 		285F8E3FB3DD02E0ABC6376D /* libPods-zaragoza.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-zaragoza.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B30766AC61D83CA0FD4A246A /* Pods-zaragoza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zaragoza.release.xcconfig"; path = "Pods/Target Support Files/Pods-zaragoza/Pods-zaragoza.release.xcconfig"; sourceTree = "<group>"; };
 		FCF9CCF83640E3D9BBFAC764 /* Pods-zaragoza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zaragoza.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zaragoza/Pods-zaragoza.debug.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +153,8 @@
 		26DBD3FB1D78324E00A4630A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				26DBD3FD1D7836EB00A4630A /* ZAStopTableViewCell.h */,
+				26DBD3FE1D7836EB00A4630A /* ZAStopTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26DBD3FF1D7836EB00A4630A /* ZAStopTableViewCell.m in Sources */,
 				262861F91D781D7B004FBBC5 /* ViewController.m in Sources */,
 				262861F61D781D7B004FBBC5 /* AppDelegate.m in Sources */,
 				262861F31D781D7B004FBBC5 /* main.m in Sources */,
