@@ -57,7 +57,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
     // Execute HTTP GET request
     [self requestUrl:@"http://api.dndzgz.com/services/bus"
     withSuccessBlock:onSuccess
-             failureBlock:onFailure];
+        failureBlock:onFailure];
 }
 
 - (void)didReceiveMemoryWarning {
