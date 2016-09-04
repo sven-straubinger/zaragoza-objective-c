@@ -261,6 +261,7 @@
 			buildConfigurationList = 2628621B1D781D7B004FBBC5 /* Build configuration list for PBXNativeTarget "zaragoza" */;
 			buildPhases = (
 				89D0D05355EC6DEB383ACB18 /* Check Pods Manifest.lock */,
+				26EFDE981D7CE84C00944B54 /* Run Script (Increase build number) */,
 				262861EA1D781D7B004FBBC5 /* Sources */,
 				262861EB1D781D7B004FBBC5 /* Frameworks */,
 				262861EC1D781D7B004FBBC5 /* Resources */,
@@ -385,6 +386,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		26EFDE981D7CE84C00944B54 /* Run Script (Increase build number) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script (Increase build number)";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "// Get version number as string\nversionNumberString=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"$INFOPLIST_FILE\")\n// Remove dot\nversionNumber=`echo $versionNumberString | sed 's/\\.//'`\n\n// Get 'old' build number\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\n\n// Get length\nbuildNumberLength=`echo ${#buildNumber}`\n    \n    // Get the last three digits\n    firstIndex=buildNumberLength-3\n    lastIndex=buildNumberLength\n    buildNumberShort=${buildNumber:firstIndex:lastIndex}\n    \n    // Increase build number\n    buildNumberShort=$((0x$buildNumberShort))\n    buildNumberShort=$(($buildNumberShort + 1))\n    buildNumberShort=$(printf \"%03X\" $buildNumberShort)\n    \n    // Add version number as Prefix\n    buildNumberShort=\"${versionNumber}${buildNumberShort}\"\n    \n    // Write back to file\n    /usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumberShort\" \"$INFOPLIST_FILE\"";
+		};
 		5BCB31992C5937DB65D3B7A3 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
