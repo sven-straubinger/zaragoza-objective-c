@@ -8,11 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import <EasyMapping.h>
+#import <UIKit/UIKit.h>
+#import "ZAEstimate.h"
 
 @interface ZABusStop : NSObject <EKMappingProtocol>
 
-@property (nonatomic) NSString *identifier;
-@property (nonatomic) NSString *name;
-@property (nonatomic) NSString *eta;
+@property (nonatomic, strong) NSString *identifier;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) NSURL *imageUrl;
+@property (nonatomic, strong) ZAEstimate *estimate;
+@property (nonatomic, assign) double lat;
+@property (nonatomic, assign) double lng;
 
 @end
