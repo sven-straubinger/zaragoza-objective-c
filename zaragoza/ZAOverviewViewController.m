@@ -61,7 +61,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
         // Store result
         self.busStops = busStops;
         
-        // Update UI (where are on the main thread and safe)
+        // Update UI (we are on the main thread and safe)
         [self.tableView reloadData];
         [self.tableView layoutIfNeeded];
         
