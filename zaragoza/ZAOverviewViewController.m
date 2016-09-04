@@ -9,12 +9,17 @@
 #import "ZAOverviewViewController.h"
 #import "ZABusStop.h"
 #import "ZAStopTableViewCell.h"
+#import "ImageDownloader.h"
 
 static NSString *kCellIdentifier = @"StopTableViewCell";
 
 @interface ZAOverviewViewController () <UITableViewDelegate, UITableViewDataSource>
 
+// List of all bus stops
 @property (nonatomic, strong) NSArray *stops;
+
+// Set of ImageDownloader objects for each bus stop map-image
+@property (nonatomic, strong) NSMutableDictionary *imageDownloadsInProgress;
 
 @end
 
@@ -23,23 +28,14 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Initalize properties
     self.stops = [[NSArray alloc]init];
+    self.imageDownloadsInProgress = [NSMutableDictionary dictionary];
     
     // Define onSuccess block
     void (^onSuccess)(NSURLSessionTask*, id) = ^(NSURLSessionTask *task, id responseObject) {
         
-        /*
-         {} JSON
-           {} lines
-           [] locations
-             {} 0
-               "id"
-               "title"
-             {} 1
-             ...
-         */
-        
-        /* responseObject should be a NSDictionary, early return if not */
+        /* The responseObject should be a NSDictionary, early return if not */
         if(![responseObject isKindOfClass:[NSDictionary class]]) {
             NSLog(@"Response object is not kind of class `NSDictionary`.");
             return;
@@ -54,9 +50,8 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
 
     };
     
-    // Define onFailure block
+    // Define onFailure block - display alert
     void (^onFailure)(NSURLSessionTask*, NSError*) = ^(NSURLSessionTask* task, NSError *error) {
-        // Display alert
         UIAlertController *alert = [UIAlertController
                                     alertControllerWithTitle:@"An error occured"
                                     message:error.localizedDescription
@@ -80,12 +75,21 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
         failureBlock:onFailure];
 }
 
+
+#pragma mark - Lifecyclye
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    [self terminateAllDownloads];
 }
 
+- (void)dealloc {
+    [self terminateAllDownloads];
+}
+
+
 #pragma mark - AFNetworking
-#warning Move implementation to own service
+
 - (void)requestUrl:(NSString *)url
   withSuccessBlock:(void (^)(NSURLSessionTask *task, id responseObject))onSuccess
       failureBlock:(void (^)(NSURLSessionTask *task, NSError *error))onFailure {
@@ -97,6 +101,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
          failure:onFailure];
 }
 
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -107,77 +112,99 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
     return [self.stops count];
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ZAStopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier
                                                             forIndexPath:indexPath];
-    ZABusStop *stop = [self.stops objectAtIndex:indexPath.row];
-    cell.identifierLabel.text = stop.identifier;
-    cell.nameLabel.text = stop.name;
-    cell.etaLabel.text = stop.eta;
+    ZABusStop *busStop = [self.stops objectAtIndex:indexPath.row];
+    cell.identifierLabel.text = busStop.identifier;
+    cell.nameLabel.text = busStop.name;
+    cell.etaLabel.text = @"Loading ...";
+    
+    // Only display cached images, defer new downloads until scrolling ends
+    if (!busStop.image) {
+        if (self.tableView.dragging == NO && self.tableView.decelerating == NO) {
+            [self startImageDownload:busStop forIndexPath:indexPath];
+        }
+        // If a download is deferred or in progress, return a placeholder image
+        cell.mapImageView.image = [UIImage imageNamed:@"placeholder.png"];
+    } else {
+        cell.mapImageView.image = busStop.image;
+    }
     
     return cell;
 }
 
 
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
+#pragma mark - Image support & UIScrollViewDelegate methods
 
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
+/*  -------------------------------------------------------------------------------
+ *   Begin an image download for a specific index path.
+ *  ------------------------------------------------------------------------------- */
+- (void)startImageDownload:(ZABusStop *)busStop forIndexPath:(NSIndexPath *)indexPath {
+    ImageDownloader *imageDownloader = (self.imageDownloadsInProgress)[indexPath];
+    if (imageDownloader == nil) {
+        imageDownloader = [[ImageDownloader alloc] init];
+        imageDownloader.busStop = busStop;
+        [imageDownloader setCompletionHandler:^{
+            
+            ZAStopTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+            
+            // Display the newly loaded image
+            cell.mapImageView.image = busStop.image;
+            
+            // Remove the ImageDownloade from the in progress list.
+            // This will result in it being deallocated.
+            [self.imageDownloadsInProgress removeObjectForKey:indexPath];
+            
+        }];
+        (self.imageDownloadsInProgress)[indexPath] = imageDownloader;
+        [imageDownloader startDownload];
+    }
+}
 
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
- }
- */
+/*  -------------------------------------------------------------------------------
+ *   This method is used in case the user scrolled into a set of cells that don't
+ *   have their image yet.
+ *  ------------------------------------------------------------------------------- */
+- (void)loadImagesForOnscreenRows {
+    if (self.stops.count > 0) {
+        NSArray *visiblePaths = [self.tableView indexPathsForVisibleRows];
+        for (NSIndexPath *indexPath in visiblePaths) {
+            ZABusStop *busStop = (self.stops)[indexPath.row];
+            
+            // Avoid the app icon download if the app already has an icon
+            if (!busStop.image) {
+                [self startImageDownload:busStop forIndexPath:indexPath];
+            }
+        }
+    }
+}
 
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
+/*  -------------------------------------------------------------------------------
+ *   Load images for all onscreen rows when scrolling is finished.
+ *  ------------------------------------------------------------------------------- */
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    if (!decelerate) {
+        [self loadImagesForOnscreenRows];
+    }
+}
 
-/*
- #pragma mark - Table view delegate
- 
- // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
- - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
- // Navigation logic may go here, for example:
- // Create the next view controller.
- <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
- 
- // Pass the selected object to the new view controller.
- 
- // Push the view controller.
- [self.navigationController pushViewController:detailViewController animated:YES];
- }
- */
+/*  -------------------------------------------------------------------------------
+ *   When scrolling stops, proceed to load the app icons that are on screen.
+ *  ------------------------------------------------------------------------------- */
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [self loadImagesForOnscreenRows];
+}
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+/*  -------------------------------------------------------------------------------
+ *   Terminate all pending downloads.
+ *  ------------------------------------------------------------------------------- */
+- (void)terminateAllDownloads {
+    // Terminate all pending download connections
+    NSArray *allDownloads = [self.imageDownloadsInProgress allValues];
+    [allDownloads makeObjectsPerformSelector:@selector(cancelDownload)];
+    
+    [self.imageDownloadsInProgress removeAllObjects];
+}
 
 @end
