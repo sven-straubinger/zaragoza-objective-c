@@ -37,7 +37,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
     // Define onSuccess block
     void (^onSuccess)(NSURLSessionTask*, id) = ^(NSURLSessionTask *task, id responseObject) {
         
-        /* The responseObject should be a NSDictionary, early return if not */
+        // The responseObject should be a NSDictionary, early return if not
         if(![responseObject isKindOfClass:[NSDictionary class]]) {
             NSLog(@"Response object is not kind of class `NSDictionary`.");
             return;
@@ -60,7 +60,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
         [self presentViewController:alert animated:YES completion:nil];
     };
     
-    // Execute HTTP GET request
+    // Execute GET request
     ZAApiService *apiService = [ZAApiService sharedInstance];
     [apiService requestUrl:@"http://api.dndzgz.com/services/bus"
           withSuccessBlock:onSuccess
