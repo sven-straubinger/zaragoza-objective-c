@@ -11,6 +11,7 @@
 #import "ZAStopTableViewCell.h"
 #import "ImageDownloader.h"
 #import "UIAlertController+Collections.h"
+#import "ZAApiService.h"
 
 static NSString *kCellIdentifier = @"StopTableViewCell";
 
@@ -60,9 +61,10 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
     };
     
     // Execute HTTP GET request
-    [self requestUrl:@"http://api.dndzgz.com/services/bus"
-    withSuccessBlock:onSuccess
-        failureBlock:onFailure];
+    ZAApiService *apiService = [ZAApiService sharedInstance];
+    [apiService requestUrl:@"http://api.dndzgz.com/services/bus"
+          withSuccessBlock:onSuccess
+              failureBlock:onFailure];
 }
 
 
@@ -75,20 +77,6 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
 
 - (void)dealloc {
     [self terminateAllDownloads];
-}
-
-
-#pragma mark - AFNetworking
-
-- (void)requestUrl:(NSString *)url
-  withSuccessBlock:(void (^)(NSURLSessionTask *task, id responseObject))onSuccess
-      failureBlock:(void (^)(NSURLSessionTask *task, NSError *error))onFailure {
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:url
-      parameters:nil
-        progress:nil
-         success:onSuccess
-         failure:onFailure];
 }
 
 
