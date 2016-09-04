@@ -18,7 +18,7 @@
 		26DBD3FF1D7836EB00A4630A /* ZAStopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DBD3FE1D7836EB00A4630A /* ZAStopTableViewCell.m */; };
 		26DBD4071D78885000A4630A /* ZABusStop.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DBD4061D78885000A4630A /* ZABusStop.m */; };
 		26DCA4411D7C651A00B8F757 /* rootViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DCA4401D7C651A00B8F757 /* rootViewControllerTest.m */; };
-		26EFDE871D7C860000944B54 /* IconDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EFDE861D7C860000944B54 /* IconDownloader.m */; };
+		26EFDE871D7C860000944B54 /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EFDE861D7C860000944B54 /* ImageDownloader.m */; };
 		68F97D83FD7D130CB8DF23E9 /* libPods-zaragozaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8DCB9CF9E57CB441E18BE0 /* libPods-zaragozaTests.a */; };
 		DE95BEC29BEFFA6040DE21C7 /* libPods-zaragoza.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 285F8E3FB3DD02E0ABC6376D /* libPods-zaragoza.a */; };
 /* End PBXBuildFile section */
@@ -62,8 +62,8 @@
 		26DBD4051D78885000A4630A /* ZABusStop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZABusStop.h; sourceTree = "<group>"; };
 		26DBD4061D78885000A4630A /* ZABusStop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZABusStop.m; sourceTree = "<group>"; };
 		26DCA4401D7C651A00B8F757 /* rootViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rootViewControllerTest.m; sourceTree = "<group>"; };
-		26EFDE851D7C860000944B54 /* IconDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconDownloader.h; sourceTree = "<group>"; };
-		26EFDE861D7C860000944B54 /* IconDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconDownloader.m; sourceTree = "<group>"; };
+		26EFDE851D7C860000944B54 /* ImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloader.h; sourceTree = "<group>"; };
+		26EFDE861D7C860000944B54 /* ImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloader.m; sourceTree = "<group>"; };
 		285F8E3FB3DD02E0ABC6376D /* libPods-zaragoza.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-zaragoza.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CE0F0D99C700D7D7DFF1C6 /* Pods-zaragozaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zaragozaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zaragozaTests/Pods-zaragozaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3A8DCB9CF9E57CB441E18BE0 /* libPods-zaragozaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-zaragozaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,8 +126,8 @@
 			children = (
 				262861F41D781D7B004FBBC5 /* ZAAppDelegate.h */,
 				262861F51D781D7B004FBBC5 /* ZAAppDelegate.m */,
-				26EFDE851D7C860000944B54 /* IconDownloader.h */,
-				26EFDE861D7C860000944B54 /* IconDownloader.m */,
+				26EFDE851D7C860000944B54 /* ImageDownloader.h */,
+				26EFDE861D7C860000944B54 /* ImageDownloader.m */,
 				26DBD3FB1D78324E00A4630A /* Views */,
 				26DBD3FC1D78325300A4630A /* ViewControllers */,
 				26DBD4041D78882200A4630A /* Models */,
@@ -452,7 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26DBD4071D78885000A4630A /* ZABusStop.m in Sources */,
-				26EFDE871D7C860000944B54 /* IconDownloader.m in Sources */,
+				26EFDE871D7C860000944B54 /* ImageDownloader.m in Sources */,
 				26DBD3FF1D7836EB00A4630A /* ZAStopTableViewCell.m in Sources */,
 				262861F91D781D7B004FBBC5 /* ZAOverviewViewController.m in Sources */,
 				262861F61D781D7B004FBBC5 /* ZAAppDelegate.m in Sources */,

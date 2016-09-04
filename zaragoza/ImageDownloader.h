@@ -11,7 +11,7 @@
 #import <Foundation/Foundation.h>
 
 @class ZABusStop;
-@interface IconDownloader : NSObject
+@interface ImageDownloader : NSObject
 
 @property (nonatomic, strong) ZABusStop *busStop;
 @property (nonatomic, copy) void (^completionHandler)(void);

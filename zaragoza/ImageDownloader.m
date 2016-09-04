@@ -8,13 +8,13 @@
   yet exist and works in conjunction with the RootViewController to manage which apps need their icon.
  */
 
-#import "IconDownloader.h"
+#import "ImageDownloader.h"
 #import "ZABusStop.h"
 
 #define kAppIconSize 90
 
 
-@interface IconDownloader ()
+@interface ImageDownloader ()
 
 @property (nonatomic, strong) NSURLSessionDataTask *sessionTask;
 
@@ -23,7 +23,7 @@
 
 #pragma mark -
 
-@implementation IconDownloader
+@implementation ImageDownloader
 
 // -------------------------------------------------------------------------------
 //	startDownload
