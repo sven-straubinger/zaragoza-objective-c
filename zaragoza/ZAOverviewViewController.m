@@ -26,22 +26,6 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
     
     self.stops = [[NSArray alloc]init];
     
-    // Setup sample data
-    ZABusStop *s1 = [[ZABusStop alloc]init];
-    s1.identifier = @"1";
-    s1.name = @"Tegeler Straße";
-    s1.eta = @"10 min";
-    
-    ZABusStop *s2 = [[ZABusStop alloc]init];
-    s2.identifier = @"2";
-    s2.name = @"Naturkundemuseum";
-    s2.eta = @"2 min";
-    
-    ZABusStop *s3 = [[ZABusStop alloc]init];
-    s3.identifier = @"3";
-    s3.name = @"Friedrichstraße";
-    s3.eta = @"3 min";
-    
     // Define onSuccess block
     void (^onSuccess)(NSURLSessionTask*, id) = ^(NSURLSessionTask *task, id responseObject) {
         
