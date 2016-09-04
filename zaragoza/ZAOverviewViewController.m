@@ -96,7 +96,6 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
     ZABusStop *busStop = [self.busStops objectAtIndex:indexPath.row];
     cell.identifierLabel.text = busStop.identifier;
     cell.nameLabel.text = busStop.name;
-    cell.etaLabel.text = @"Loading ...";
     
     // Only display cached images, defer new downloads until scrolling ends
     if (!busStop.image) {
@@ -107,6 +106,15 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
         cell.mapImageView.image = [UIImage imageNamed:@"placeholder.png"];
     } else {
         cell.mapImageView.image = busStop.image;
+    }
+    
+    if(!busStop.estimate) {
+        if (self.tableView.dragging == NO && self.tableView.decelerating == NO) {
+            [self startEstimateDownload:busStop forIndexPath:indexPath];
+        }
+        cell.etaLabel.text = @"Loading ...";
+    } else {
+        [cell.etaLabel setText:[NSString stringWithFormat:@"%ld Minutes", busStop.estimate.estimate]];
     }
     
     return cell;
@@ -150,17 +158,22 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
  *  ------------------------------------------------------------------------------- */
 - (void)startEstimateDownload:(ZABusStop *)busStop forIndexPath:(NSIndexPath *)indexPath {
     ZAApiService *service = [ZAApiService sharedInstance];
-    ZAStopTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     [service estimateForBusStopWithId:busStop.identifier
                      withSuccessBlock:^(ZAEstimate *estimate) {
-                         // Set estimate
+                         // Store estimate
                          busStop.estimate = estimate;
                          
-                         // Completion block runs on the main thread --> UI updates are fine
+                         // Update UI, completion block runs on the main thread
+                         ZAStopTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
                          [cell.etaLabel setText:[NSString stringWithFormat:@"%ld Minutes", estimate.estimate]];
+                         
                      } failureBlock:^(NSString *errorMessage) {
                          NSLog(@"%@", errorMessage);
+                         
+                         // Update UI, completion block runs on the main thread
+                         ZAStopTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
                          [cell.etaLabel setText:@"An error occured."];
+                         
                      }];
 }
 
@@ -188,7 +201,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
 }
 
 /*  -------------------------------------------------------------------------------
- *   Load images for all onscreen rows when scrolling is finished.
+ *   Load additional data (image & ETA) for all onscreen rows when scrolling is finished.
  *  ------------------------------------------------------------------------------- */
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     if (!decelerate) {
@@ -197,14 +210,14 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
 }
 
 /*  -------------------------------------------------------------------------------
- *   When scrolling stops, proceed to load the app icons that are on screen.
+ *   When scrolling stops, proceed to load additional data (images & ETA) for images that are on screen.
  *  ------------------------------------------------------------------------------- */
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     [self loadDataAdditionsForOnscreenRows];
 }
 
 /*  -------------------------------------------------------------------------------
- *   Terminate all pending downloads.
+ *   Terminate all pending image downloads.
  *  ------------------------------------------------------------------------------- */
 - (void)terminateAllDownloads {
     // Terminate all pending download connections
