@@ -43,10 +43,24 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
     s3.eta = @"3 min";
     
     [self.stops addObjectsFromArray:@[s1, s2, s3]];
+    
+    [self requestDataAsJson];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+#warning Move implementation to own service
+#pragma mark - AFNetworking
+
+- (void)requestDataAsJson {
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:@"http://api.dndzgz.com/services/bus" parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
 
 #pragma mark - Table view data source
