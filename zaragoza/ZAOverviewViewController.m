@@ -17,7 +17,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
 @interface ZAOverviewViewController () <UITableViewDelegate, UITableViewDataSource>
 
 // List of all bus stops
-@property (nonatomic, strong) NSArray *stops;
+@property (nonatomic, strong) NSArray *busStops;
 
 // Set of ImageDownloader objects for each bus stop map-image
 @property (nonatomic, strong) NSMutableDictionary *imageDownloadsInProgress;
@@ -30,7 +30,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
     [super viewDidLoad];
     
     // Initalize properties
-    self.stops = [[NSArray alloc]init];
+    self.busStops = [[NSArray alloc]init];
     self.imageDownloadsInProgress = [NSMutableDictionary dictionary];
     
     // Define onSuccess block
@@ -44,7 +44,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
         
         // Retrieve locations
         NSArray *locations = [responseObject valueForKey:@"locations"];
-        self.stops = [EKMapper arrayOfObjectsFromExternalRepresentation:locations
+        self.busStops = [EKMapper arrayOfObjectsFromExternalRepresentation:locations
                                                             withMapping:[ZABusStop objectMapping]];
         // Reload table view
         [self.tableView reloadData];
@@ -99,13 +99,13 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.stops count];
+    return [self.busStops count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ZAStopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier
                                                             forIndexPath:indexPath];
-    ZABusStop *busStop = [self.stops objectAtIndex:indexPath.row];
+    ZABusStop *busStop = [self.busStops objectAtIndex:indexPath.row];
     cell.identifierLabel.text = busStop.identifier;
     cell.nameLabel.text = busStop.name;
     cell.etaLabel.text = @"Loading ...";
@@ -162,10 +162,10 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
  *   have their image yet.
  *  ------------------------------------------------------------------------------- */
 - (void)loadImagesForOnscreenRows {
-    if (self.stops.count > 0) {
+    if ([self.busStops count] > 0) {
         NSArray *visiblePaths = [self.tableView indexPathsForVisibleRows];
         for (NSIndexPath *indexPath in visiblePaths) {
-            ZABusStop *busStop = (self.stops)[indexPath.row];
+            ZABusStop *busStop = (self.busStops)[indexPath.row];
             
             // Avoid the app icon download if the app already has an icon
             if (!busStop.image) {
