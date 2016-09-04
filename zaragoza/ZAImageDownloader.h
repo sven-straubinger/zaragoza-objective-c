@@ -1,5 +1,5 @@
 //
-//  ImageDownloader.h
+//  ZAImageDownloader.h
 //  zaragoza
 //
 //  Created by Sven Straubinger on 04/09/16.
