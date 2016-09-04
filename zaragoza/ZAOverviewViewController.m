@@ -59,7 +59,8 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
          */
         
         /* responseObject should be a NSDictionary, early return if not */
-        if([responseObject isKindOfClass:[NSDictionary class]]) {
+        if(![responseObject isKindOfClass:[NSDictionary class]]) {
+            NSLog(@"Response object is not kind of class `NSDictionary`.");
             return;
         }
         
