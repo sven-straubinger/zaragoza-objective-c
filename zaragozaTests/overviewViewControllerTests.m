@@ -32,6 +32,10 @@
     [super tearDown];
 }
 
+- (void)testKindOfClass {
+    XCTAssertTrue([self.viewController isKindOfClass:[ZAOverviewViewController class]]);
+}
+
 - (void)testThatViewLoads {
     XCTAssertNotNil(self.viewController.view, @"View not initiated properly.");
 }
