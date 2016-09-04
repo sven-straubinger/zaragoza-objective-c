@@ -38,6 +38,10 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
     self.imageDownloadsInProgress = [NSMutableDictionary dictionary];
     self.apiService = [ZAApiService sharedInstance];
     
+    // Set title image view
+    UIImage *image = [UIImage imageNamed:@"header.png"];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
+    
     // Add UIRefreshControl
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc]init];
     [refreshControl addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
