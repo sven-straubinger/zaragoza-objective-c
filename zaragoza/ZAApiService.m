@@ -75,7 +75,7 @@ static NSString *kApiBasePath = @"http://api.dndzgz.com/services/bus";
         NSArray *rawEstimates = [responseObject valueForKey:@"estimates"];
         NSArray *estimates = [EKMapper arrayOfObjectsFromExternalRepresentation:rawEstimates
                                                                     withMapping:[ZAEstimate objectMapping]];
-        
+
         // Sort to retrieve shortest estimate first, which is the most relevant
         NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"estimate" ascending:YES]];
         NSArray *sortedEstimates = [estimates sortedArrayUsingDescriptors:sortDescriptors];
