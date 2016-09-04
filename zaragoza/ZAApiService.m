@@ -101,7 +101,7 @@ static NSString *kApiBasePath = @"http://api.dndzgz.com/services/bus";
 }
 
 
-#pragma mark - Private Method
+#pragma mark - Private Methods
 
 - (void)requestUrl:(NSString *)url
   withSuccessBlock:(void (^)(NSURLSessionTask *task, id responseObject))onSuccess
