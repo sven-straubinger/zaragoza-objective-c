@@ -138,6 +138,11 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
 #pragma mark - Image support & UIScrollViewDelegate methods
 
 /*  -------------------------------------------------------------------------------
+ *   This section implements the samples from:
+ *   https://developer.apple.com/library/ios/samplecode/LazyTableImages/Introduction/Intro.html
+ *  ------------------------------------------------------------------------------- */
+
+/*  -------------------------------------------------------------------------------
  *   Begin an image download for a specific index path.
  *  ------------------------------------------------------------------------------- */
 - (void)startImageDownload:(ZABusStop *)busStop forIndexPath:(NSIndexPath *)indexPath {
