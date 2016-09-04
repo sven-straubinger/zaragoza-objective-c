@@ -7,10 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "ZAOverviewViewController.h"
 
 @interface overviewViewControllerTests : XCTestCase
 
-@property(nonatomic, strong) UIViewController *viewController;
+@property(nonatomic, strong) ZAOverviewViewController *viewController;
 
 @end
 
@@ -33,6 +34,11 @@
 
 - (void)testThatViewLoads {
     XCTAssertNotNil(self.viewController.view, @"View not initiated properly.");
+}
+
+- (void)testParentViewHasTableViewSubview {
+    NSArray *subviews = self.viewController.view.subviews;
+    XCTAssertTrue([subviews containsObject:self.viewController.tableView]);
 }
 
 #warning Review performance test
