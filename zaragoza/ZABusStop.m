@@ -10,4 +10,13 @@
 
 @implementation ZABusStop
 
++(EKObjectMapping *)objectMapping
+{
+    return [EKObjectMapping mappingForClass:self withBlock:^(EKObjectMapping *mapping) {
+        [mapping mapKeyPath:@"id" toProperty:@"identifier"];
+        [mapping mapKeyPath:@"title" toProperty:@"name"];
+#warning Implement estimated time of arrival
+    }];
+}
+
 @end

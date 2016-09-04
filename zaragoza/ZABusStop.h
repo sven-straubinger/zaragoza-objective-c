@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <EasyMapping.h>
 
-@interface ZABusStop : NSObject
+@interface ZABusStop : NSObject <EKMappingProtocol>
 
 @property (nonatomic) NSString *identifier;
 @property (nonatomic) NSString *name;

@@ -15,7 +15,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
 @interface ZAOverviewViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property(nonatomic, weak) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *stops;
+@property (nonatomic, strong) NSArray *stops;
 
 @end
 
@@ -24,7 +24,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.stops = [[NSMutableArray alloc]init];
+    self.stops = [[NSArray alloc]init];
     
     // Setup sample data
     ZABusStop *s1 = [[ZABusStop alloc]init];
@@ -41,8 +41,6 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
     s3.identifier = @"3";
     s3.name = @"Friedrichstraße";
     s3.eta = @"3 min";
-    
-    [self.stops addObjectsFromArray:@[s1, s2, s3]];
     
     // Define onSuccess block
     void (^onSuccess)(NSURLSessionTask*, id) = ^(NSURLSessionTask *task, id responseObject) {
@@ -66,6 +64,10 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
         
         // Retrieve locations
         NSArray *locations = [responseObject valueForKey:@"locations"];
+        self.stops = [EKMapper arrayOfObjectsFromExternalRepresentation:locations
+                                                            withMapping:[ZABusStop objectMapping]];
+        // Reload table view
+        [self.tableView reloadData];
 
     };
     
