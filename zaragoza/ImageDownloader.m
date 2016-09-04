@@ -13,41 +13,32 @@
 
 #define kAppIconSize 90
 
-
 @interface ImageDownloader ()
 
 @property (nonatomic, strong) NSURLSessionDataTask *sessionTask;
 
 @end
 
-
-#pragma mark -
-
 @implementation ImageDownloader
 
-// -------------------------------------------------------------------------------
-//	startDownload
-// -------------------------------------------------------------------------------
-- (void)startDownload
-{
+- (void)startDownload {
     NSURLRequest *request = [NSURLRequest requestWithURL:self.busStop.imageUrl];
 
-    // create an session data task to obtain and download the app icon
-    _sessionTask = [[NSURLSession sharedSession] dataTaskWithRequest:request
+    // Create a session data task to obtain and download the app icon
+    self.sessionTask = [[NSURLSession sharedSession] dataTaskWithRequest:request
                                                    completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        
-        // in case we want to know the response status code
-        //NSInteger HTTPStatusCode = [(NSHTTPURLResponse *)response statusCode];
+    
+        NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
 
-        if (error != nil)
-        {
-            if ([error code] == NSURLErrorAppTransportSecurityRequiresSecureConnection)
-            {
-                // if you get error NSURLErrorAppTransportSecurityRequiresSecureConnection (-1022),
-                // then your Info.plist has not been properly configured to match the target server.
-                //
-                abort();
-            }
+                                                       
+        if (error != nil) {
+            NSLog(error.localizedDescription);
+            return;
+        }
+                                                       
+        if(statusCode != 200) {
+            NSLog(@"Status code was not ok 200");
+            return;
         }
                                                        
         [[NSOperationQueue mainQueue] addOperationWithBlock: ^{
@@ -55,23 +46,19 @@
             // Set appIcon and clear temporary data/image
             UIImage *image = [[UIImage alloc] initWithData:data];
             
-            if (image.size.width != kAppIconSize || image.size.height != kAppIconSize)
-            {
+            if (image.size.width != kAppIconSize || image.size.height != kAppIconSize) {
                 CGSize itemSize = CGSizeMake(kAppIconSize, kAppIconSize);
                 UIGraphicsBeginImageContextWithOptions(itemSize, NO, 0.0f);
                 CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
                 [image drawInRect:imageRect];
                 self.busStop.image = UIGraphicsGetImageFromCurrentImageContext();
                 UIGraphicsEndImageContext();
-            }
-            else
-            {
+            } else {
                 self.busStop.image = image;
             }
             
-            // call our completion handler to tell our client that our icon is ready for display
-            if (self.completionHandler != nil)
-            {
+            // Call our completion handler to tell our client that our icon is ready for display
+            if (self.completionHandler != nil) {
                 self.completionHandler();
             }
         }];
@@ -80,13 +67,9 @@
     [self.sessionTask resume];
 }
 
-// -------------------------------------------------------------------------------
-//	cancelDownload
-// -------------------------------------------------------------------------------
-- (void)cancelDownload
-{
+- (void)cancelDownload {
     [self.sessionTask cancel];
-    _sessionTask = nil;
+    self.sessionTask = nil;
 }
 
 @end
