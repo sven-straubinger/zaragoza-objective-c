@@ -15,6 +15,8 @@
     return [EKObjectMapping mappingForClass:self withBlock:^(EKObjectMapping *mapping) {
         [mapping mapKeyPath:@"id" toProperty:@"identifier"];
         [mapping mapKeyPath:@"title" toProperty:@"name"];
+        [mapping mapKeyPath:@"lat" toProperty:@"lat"];
+        [mapping mapKeyPath:@"lon" toProperty:@"lng"];
 #warning Implement estimated time of arrival
     }];
 }
