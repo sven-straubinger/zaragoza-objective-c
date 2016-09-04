@@ -6,3 +6,5 @@ An application for an application – written in Objective-C, backed with [Cocoa
 1. Checkout project
 2. Run `pod install`
 3. Use workspace by opening `zaragoza.xcworkspace`
+
+Table images are lazily loaded.
