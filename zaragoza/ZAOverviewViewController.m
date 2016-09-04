@@ -51,7 +51,22 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
     
     // Define onFailure block
     void (^onFailure)(NSURLSessionTask*, NSError*) = ^(NSURLSessionTask* task, NSError *error) {
-        NSLog(@"Error: %@", error);
+        // Display alert
+        UIAlertController *alert = [UIAlertController
+                                    alertControllerWithTitle:@"An error occured"
+                                    message:error.localizedDescription
+                                    preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *ok = [UIAlertAction
+                             actionWithTitle:@"Ok"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action) {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                             }];
+
+        [alert addAction:ok];
+        
+        [self presentViewController:alert animated:YES completion:nil];
     };
     
     // Execute HTTP GET request
