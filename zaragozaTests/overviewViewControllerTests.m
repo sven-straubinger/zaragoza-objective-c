@@ -32,7 +32,7 @@
     [super tearDown];
 }
 
-- (void)testKindOfClass {
+- (void)DISABLE_testKindOfClass {
     XCTAssertTrue([self.viewController isKindOfClass:[ZAOverviewViewController class]]);
 }
 
