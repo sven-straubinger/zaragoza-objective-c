@@ -132,8 +132,6 @@
 			children = (
 				262861F41D781D7B004FBBC5 /* ZAAppDelegate.h */,
 				262861F51D781D7B004FBBC5 /* ZAAppDelegate.m */,
-				26EFDE851D7C860000944B54 /* ImageDownloader.h */,
-				26EFDE861D7C860000944B54 /* ImageDownloader.m */,
 				26EFDE941D7CAF2000944B54 /* API */,
 				26DBD3FB1D78324E00A4630A /* Views */,
 				26DBD3FC1D78325300A4630A /* ViewControllers */,
@@ -224,6 +222,8 @@
 			children = (
 				26EFDE911D7CAF1700944B54 /* ZAApiService.h */,
 				26EFDE921D7CAF1700944B54 /* ZAApiService.m */,
+				26EFDE851D7C860000944B54 /* ImageDownloader.h */,
+				26EFDE861D7C860000944B54 /* ImageDownloader.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
