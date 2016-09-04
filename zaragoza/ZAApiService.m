@@ -27,12 +27,12 @@ static NSString *kApiBasePath = @"http://api.dndzgz.com/services/bus";
 - (void)requestBusStopsWithSuccessBlock:(void (^)(NSArray *busStops))onSuccess
                            failureBlock:(void (^)(NSString *errorMessage))onFailure {
     
-    // First, Define request-onSuccess block
+    // First, define request-onSuccess block
     void (^onRequestSuccess)(NSURLSessionTask*, id) = ^(NSURLSessionTask *task, id responseObject) {
         
         // The responseObject should be a NSDictionary, early return if not
         if(![responseObject isKindOfClass:[NSDictionary class]]) {
-            NSLog(@"Response object is not kind of class `NSDictionary`.");
+            onFailure(@"Response object is not kind of class `NSDictionary`.");
             return;
         }
         
@@ -62,7 +62,7 @@ static NSString *kApiBasePath = @"http://api.dndzgz.com/services/bus";
     // Define url
     NSString *url = [NSString stringWithFormat:@"%@/%@", kApiBasePath, identifier];
     
-    // Define request-onSuccess block
+    // First, define request-onSuccess block
     void (^onRequestSuccess)(NSURLSessionTask*, id) = ^(NSURLSessionTask *task, id responseObject) {
         
         // The responseObject should be a NSDictionary, early return if not
@@ -89,12 +89,12 @@ static NSString *kApiBasePath = @"http://api.dndzgz.com/services/bus";
         }
     };
     
-    // Define request-onFailure block
+    // Second, define request-onFailure block
     void (^onRequestFailure)(NSURLSessionTask*, NSError*) = ^(NSURLSessionTask *task, NSError *error) {
         onFailure(error.localizedDescription);
     };
     
-    // Execute request
+    // Finally: Execute request
     [self requestUrl:url
     withSuccessBlock:onRequestSuccess
         failureBlock:onRequestFailure];
