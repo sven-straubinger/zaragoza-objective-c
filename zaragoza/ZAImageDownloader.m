@@ -9,18 +9,18 @@
 //  https://developer.apple.com/library/ios/samplecode/LazyTableImages/Introduction/Intro.html
 //
 
-#import "ImageDownloader.h"
+#import "ZAImageDownloader.h"
 #import "ZABusStop.h"
 
 #define kAppIconSize 90
 
-@interface ImageDownloader ()
+@interface ZAImageDownloader ()
 
 @property (nonatomic, strong) NSURLSessionDataTask *sessionTask;
 
 @end
 
-@implementation ImageDownloader
+@implementation ZAImageDownloader
 
 - (void)startDownload {
     NSURLRequest *request = [NSURLRequest requestWithURL:self.busStop.imageUrl];

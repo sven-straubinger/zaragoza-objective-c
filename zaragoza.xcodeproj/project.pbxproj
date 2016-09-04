@@ -18,7 +18,7 @@
 		26DBD3FF1D7836EB00A4630A /* ZAStopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DBD3FE1D7836EB00A4630A /* ZAStopTableViewCell.m */; };
 		26DBD4071D78885000A4630A /* ZABusStop.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DBD4061D78885000A4630A /* ZABusStop.m */; };
 		26DCA4411D7C651A00B8F757 /* rootViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DCA4401D7C651A00B8F757 /* rootViewControllerTest.m */; };
-		26EFDE871D7C860000944B54 /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EFDE861D7C860000944B54 /* ImageDownloader.m */; };
+		26EFDE871D7C860000944B54 /* ZAImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EFDE861D7C860000944B54 /* ZAImageDownloader.m */; };
 		26EFDE8D1D7CA8B600944B54 /* UIAlertController+Collections.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EFDE8C1D7CA8B600944B54 /* UIAlertController+Collections.m */; };
 		26EFDE931D7CAF1700944B54 /* ZAApiService.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EFDE921D7CAF1700944B54 /* ZAApiService.m */; };
 		26EFDE971D7CB2FD00944B54 /* ZAEstimate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EFDE961D7CB2FD00944B54 /* ZAEstimate.m */; };
@@ -65,8 +65,8 @@
 		26DBD4051D78885000A4630A /* ZABusStop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZABusStop.h; sourceTree = "<group>"; };
 		26DBD4061D78885000A4630A /* ZABusStop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZABusStop.m; sourceTree = "<group>"; };
 		26DCA4401D7C651A00B8F757 /* rootViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rootViewControllerTest.m; sourceTree = "<group>"; };
-		26EFDE851D7C860000944B54 /* ImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloader.h; sourceTree = "<group>"; };
-		26EFDE861D7C860000944B54 /* ImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloader.m; sourceTree = "<group>"; };
+		26EFDE851D7C860000944B54 /* ZAImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAImageDownloader.h; sourceTree = "<group>"; };
+		26EFDE861D7C860000944B54 /* ZAImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAImageDownloader.m; sourceTree = "<group>"; };
 		26EFDE8B1D7CA8B600944B54 /* UIAlertController+Collections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Collections.h"; sourceTree = "<group>"; };
 		26EFDE8C1D7CA8B600944B54 /* UIAlertController+Collections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Collections.m"; sourceTree = "<group>"; };
 		26EFDE911D7CAF1700944B54 /* ZAApiService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAApiService.h; sourceTree = "<group>"; };
@@ -227,8 +227,8 @@
 			children = (
 				26EFDE911D7CAF1700944B54 /* ZAApiService.h */,
 				26EFDE921D7CAF1700944B54 /* ZAApiService.m */,
-				26EFDE851D7C860000944B54 /* ImageDownloader.h */,
-				26EFDE861D7C860000944B54 /* ImageDownloader.m */,
+				26EFDE851D7C860000944B54 /* ZAImageDownloader.h */,
+				26EFDE861D7C860000944B54 /* ZAImageDownloader.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -484,7 +484,7 @@
 			files = (
 				26EFDE971D7CB2FD00944B54 /* ZAEstimate.m in Sources */,
 				26DBD4071D78885000A4630A /* ZABusStop.m in Sources */,
-				26EFDE871D7C860000944B54 /* ImageDownloader.m in Sources */,
+				26EFDE871D7C860000944B54 /* ZAImageDownloader.m in Sources */,
 				26EFDE8D1D7CA8B600944B54 /* UIAlertController+Collections.m in Sources */,
 				26DBD3FF1D7836EB00A4630A /* ZAStopTableViewCell.m in Sources */,
 				262861F91D781D7B004FBBC5 /* ZAOverviewViewController.m in Sources */,

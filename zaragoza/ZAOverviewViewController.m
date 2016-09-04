@@ -8,7 +8,7 @@
 
 #import "ZAOverviewViewController.h"
 #import "ZABusStop.h"
-#import "ImageDownloader.h"
+#import "ZAImageDownloader.h"
 #import "ZAStopTableViewCell.h"
 #import "UIAlertController+Collections.h"
 #import "ZAApiService.h"
@@ -120,9 +120,9 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
  *   Begin image download for a specific index path.
  *  ------------------------------------------------------------------------------- */
 - (void)startImageDownload:(ZABusStop *)busStop forIndexPath:(NSIndexPath *)indexPath {
-    ImageDownloader *imageDownloader = (self.imageDownloadsInProgress)[indexPath];
+    ZAImageDownloader *imageDownloader = (self.imageDownloadsInProgress)[indexPath];
     if (imageDownloader == nil) {
-        imageDownloader = [[ImageDownloader alloc] init];
+        imageDownloader = [[ZAImageDownloader alloc] init];
         imageDownloader.busStop = busStop;
         [imageDownloader setCompletionHandler:^{
             
