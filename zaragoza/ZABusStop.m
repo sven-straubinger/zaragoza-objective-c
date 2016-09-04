@@ -19,7 +19,6 @@ static NSString *kImageBasePath= @"http://maps.googleapis.com/maps/api/staticmap
         [mapping mapKeyPath:@"title" toProperty:@"name"];
         [mapping mapKeyPath:@"lat" toProperty:@"lat"];
         [mapping mapKeyPath:@"lon" toProperty:@"lng"];
-#warning Implement estimated time of arrival
     }];
 }
 
