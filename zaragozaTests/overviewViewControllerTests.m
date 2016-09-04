@@ -22,6 +22,7 @@
     // Load view controller from storyboard
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"ZAOverviewViewController"];
+#warning Is `loadView` needed?
     [self.viewController performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];
 }
 
