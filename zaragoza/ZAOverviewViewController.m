@@ -37,7 +37,24 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
     self.busStops = [[NSArray alloc]init];
     self.imageDownloadsInProgress = [NSMutableDictionary dictionary];
     self.apiService = [ZAApiService sharedInstance];
-        
+    
+    // Add UIRefreshControl
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc]init];
+    [refreshControl addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
+    [self.tableView sendSubviewToBack:refreshControl];
+    
+    // Request data
+    [self requestData];
+}
+
+
+#pragma mark - Data
+
+- (void)requestData {
+    // Terminate all pending requests
+    [self terminateAllImageDownloads];
+    
     // Request all bus stops
     [self.apiService requestBusStopsWithSuccessBlock:^(NSArray *busStops) {
         
@@ -46,6 +63,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
         
         // Update UI (where are on the main thread and safe)
         [self.tableView reloadData];
+        [self.tableView layoutIfNeeded];
         
     } failureBlock:^(NSString *errorMessage) {
         UIAlertController *alert = [UIAlertController controllerWithTitle:@"An error occured"
@@ -53,6 +71,11 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
                                                               actionTitle:@"Ok"];
         [self presentViewController:alert animated:YES completion:nil];
     }];
+}
+
+- (void)handleRefresh:(UIRefreshControl *)refreshControl {
+    [self requestData];
+    [refreshControl endRefreshing];
 }
 
 
