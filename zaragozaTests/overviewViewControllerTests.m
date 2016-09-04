@@ -1,6 +1,6 @@
 //
-//  zaragozaTests.m
-//  zaragozaTests
+//  overviewViewControllerTests.m
+//  overviewViewControllerTests
 //
 //  Created by Sven Straubinger on 01/09/16.
 //  Copyright © 2016 Sven Straubinger. All rights reserved.
@@ -8,13 +8,13 @@
 
 #import <XCTest/XCTest.h>
 
-@interface zaragozaTests : XCTestCase
+@interface overviewViewControllerTests : XCTestCase
 
 @property(nonatomic, strong) UIViewController *viewController;
 
 @end
 
-@implementation zaragozaTests
+@implementation overviewViewControllerTests
 
 - (void)setUp {
     [super setUp];

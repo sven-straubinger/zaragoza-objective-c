@@ -13,7 +13,7 @@
 		262861FC1D781D7B004FBBC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262861FA1D781D7B004FBBC5 /* Main.storyboard */; };
 		262861FE1D781D7B004FBBC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 262861FD1D781D7B004FBBC5 /* Assets.xcassets */; };
 		262862011D781D7B004FBBC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262861FF1D781D7B004FBBC5 /* LaunchScreen.storyboard */; };
-		2628620C1D781D7B004FBBC5 /* zaragozaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2628620B1D781D7B004FBBC5 /* zaragozaTests.m */; };
+		2628620C1D781D7B004FBBC5 /* overviewViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2628620B1D781D7B004FBBC5 /* overviewViewControllerTests.m */; };
 		262862171D781D7B004FBBC5 /* zaragozaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 262862161D781D7B004FBBC5 /* zaragozaUITests.m */; };
 		26DBD3FF1D7836EB00A4630A /* ZAStopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DBD3FE1D7836EB00A4630A /* ZAStopTableViewCell.m */; };
 		26DBD4071D78885000A4630A /* ZABusStop.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DBD4061D78885000A4630A /* ZABusStop.m */; };
@@ -49,7 +49,7 @@
 		262862001D781D7B004FBBC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		262862021D781D7B004FBBC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		262862071D781D7B004FBBC5 /* zaragozaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = zaragozaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2628620B1D781D7B004FBBC5 /* zaragozaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = zaragozaTests.m; sourceTree = "<group>"; };
+		2628620B1D781D7B004FBBC5 /* overviewViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = overviewViewControllerTests.m; sourceTree = "<group>"; };
 		2628620D1D781D7B004FBBC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		262862121D781D7B004FBBC5 /* zaragozaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = zaragozaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		262862161D781D7B004FBBC5 /* zaragozaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = zaragozaUITests.m; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 		2628620A1D781D7B004FBBC5 /* zaragozaTests */ = {
 			isa = PBXGroup;
 			children = (
-				2628620B1D781D7B004FBBC5 /* zaragozaTests.m */,
+				2628620B1D781D7B004FBBC5 /* overviewViewControllerTests.m */,
 				2628620D1D781D7B004FBBC5 /* Info.plist */,
 			);
 			path = zaragozaTests;
@@ -391,7 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2628620C1D781D7B004FBBC5 /* zaragozaTests.m in Sources */,
+				2628620C1D781D7B004FBBC5 /* overviewViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
