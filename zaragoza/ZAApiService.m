@@ -29,8 +29,8 @@ static NSString *kEstimateBasePath = @"http://api.dndzgz.com/services/bus";
     [manager GET:url
       parameters:nil
         progress:nil
-         success:onSuccess
-         failure:onFailure];
+         success:onSuccess     // Please note from the docs: Since we did not specify any dispatch queue,
+         failure:onFailure];   // the main queue is used for all completion blocks --> so UI updates are fine.
 }
 
 - (void)estimateForBusStopWithId:(NSString*)identifier
