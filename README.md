@@ -8,3 +8,7 @@ An application for an application – written in Objective-C, backed with [Cocoa
 3. Use workspace by opening `zaragoza.xcworkspace`
 
 Table images are lazily loaded with inspiration from Apple's LazyTableImages.
+
+## Next steps
+
+* sort bus stops by distance to user location
