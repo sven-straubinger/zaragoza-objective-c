@@ -8,6 +8,8 @@
 
 #import "ZABusStop.h"
 
+static NSString *kImageBasePath= @"http://maps.googleapis.com/maps/api/staticmap";
+
 @implementation ZABusStop
 
 +(EKObjectMapping *)objectMapping
@@ -19,6 +21,25 @@
         [mapping mapKeyPath:@"lon" toProperty:@"lng"];
 #warning Implement estimated time of arrival
     }];
+}
+
+- (NSURL*)imageUrl {
+    
+    // Prepare latitude/longitude string
+    NSString *latlng = [NSString stringWithFormat:@"%f,%f", self.lat, self.lng];
+
+    // Define base path
+    NSURLComponents *components = [NSURLComponents componentsWithString:kImageBasePath];
+    
+    // Define query parameter
+    NSURLQueryItem *zoom = [NSURLQueryItem queryItemWithName:@"zoom" value:@"15"];
+    NSURLQueryItem *size = [NSURLQueryItem queryItemWithName:@"size" value:@"180x180"];
+    NSURLQueryItem *center = [NSURLQueryItem queryItemWithName:@"center" value:latlng];
+    NSURLQueryItem *sensor = [NSURLQueryItem queryItemWithName:@"sensor" value:@"true"];
+    
+    // Combine and return
+    components.queryItems = @[ zoom, size, center, sensor ];
+    return components.URL;
 }
 
 @end

@@ -11,7 +11,7 @@
 #import "IconDownloader.h"
 #import "ZABusStop.h"
 
-#define kAppIconSize 48
+#define kAppIconSize 90
 
 
 @interface IconDownloader ()
@@ -30,7 +30,7 @@
 // -------------------------------------------------------------------------------
 - (void)startDownload
 {
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.busStop.imageUrl]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:self.busStop.imageUrl];
 
     // create an session data task to obtain and download the app icon
     _sessionTask = [[NSURLSession sharedSession] dataTaskWithRequest:request

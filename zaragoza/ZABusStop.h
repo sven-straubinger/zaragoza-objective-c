@@ -16,7 +16,7 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *eta;
 @property (nonatomic, strong) UIImage *image;
-@property (nonatomic, strong) NSString *imageUrl;
+@property (nonatomic, strong) NSURL *imageUrl;
 @property (nonatomic, assign) double lat;
 @property (nonatomic, assign) double lng;
 
