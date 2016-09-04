@@ -24,7 +24,7 @@
                              style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
                                  [alertController dismissViewControllerAnimated:YES completion:nil];
                              }];
-    // Combine & return
+    // Combine and return
     [alertController addAction:action];
     return alertController;
 }
