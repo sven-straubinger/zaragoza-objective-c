@@ -10,6 +10,7 @@
 #import "ZABusStop.h"
 #import "ZAStopTableViewCell.h"
 #import "ImageDownloader.h"
+#import "UIAlertController+Collections.h"
 
 static NSString *kCellIdentifier = @"StopTableViewCell";
 
@@ -52,20 +53,9 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
     
     // Define onFailure block - display alert
     void (^onFailure)(NSURLSessionTask*, NSError*) = ^(NSURLSessionTask* task, NSError *error) {
-        UIAlertController *alert = [UIAlertController
-                                    alertControllerWithTitle:@"An error occured"
-                                    message:error.localizedDescription
-                                    preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *ok = [UIAlertAction
-                             actionWithTitle:@"Ok"
-                             style:UIAlertActionStyleDefault
-                             handler:^(UIAlertAction * action) {
-                                 [alert dismissViewControllerAnimated:YES completion:nil];
-                             }];
-
-        [alert addAction:ok];
-        
+        UIAlertController *alert = [UIAlertController controllerWithTitle:@"An error occured"
+                                                                  message:error.localizedDescription
+                                                              actionTitle:@"Ok"];
         [self presentViewController:alert animated:YES completion:nil];
     };
     

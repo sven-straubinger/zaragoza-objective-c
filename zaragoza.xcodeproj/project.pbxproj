@@ -19,6 +19,7 @@
 		26DBD4071D78885000A4630A /* ZABusStop.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DBD4061D78885000A4630A /* ZABusStop.m */; };
 		26DCA4411D7C651A00B8F757 /* rootViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DCA4401D7C651A00B8F757 /* rootViewControllerTest.m */; };
 		26EFDE871D7C860000944B54 /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EFDE861D7C860000944B54 /* ImageDownloader.m */; };
+		26EFDE8D1D7CA8B600944B54 /* UIAlertController+Collections.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EFDE8C1D7CA8B600944B54 /* UIAlertController+Collections.m */; };
 		68F97D83FD7D130CB8DF23E9 /* libPods-zaragozaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8DCB9CF9E57CB441E18BE0 /* libPods-zaragozaTests.a */; };
 		DE95BEC29BEFFA6040DE21C7 /* libPods-zaragoza.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 285F8E3FB3DD02E0ABC6376D /* libPods-zaragoza.a */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,8 @@
 		26DCA4401D7C651A00B8F757 /* rootViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rootViewControllerTest.m; sourceTree = "<group>"; };
 		26EFDE851D7C860000944B54 /* ImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDownloader.h; sourceTree = "<group>"; };
 		26EFDE861D7C860000944B54 /* ImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDownloader.m; sourceTree = "<group>"; };
+		26EFDE8B1D7CA8B600944B54 /* UIAlertController+Collections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Collections.h"; sourceTree = "<group>"; };
+		26EFDE8C1D7CA8B600944B54 /* UIAlertController+Collections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Collections.m"; sourceTree = "<group>"; };
 		285F8E3FB3DD02E0ABC6376D /* libPods-zaragoza.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-zaragoza.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CE0F0D99C700D7D7DFF1C6 /* Pods-zaragozaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zaragozaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zaragozaTests/Pods-zaragozaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3A8DCB9CF9E57CB441E18BE0 /* libPods-zaragozaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-zaragozaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +134,7 @@
 				26DBD3FB1D78324E00A4630A /* Views */,
 				26DBD3FC1D78325300A4630A /* ViewControllers */,
 				26DBD4041D78882200A4630A /* Models */,
+				26EFDE8E1D7CA8E900944B54 /* Categories */,
 				262861FA1D781D7B004FBBC5 /* Main.storyboard */,
 				262861FD1D781D7B004FBBC5 /* Assets.xcassets */,
 				262861FF1D781D7B004FBBC5 /* LaunchScreen.storyboard */,
@@ -200,6 +204,15 @@
 				2628620B1D781D7B004FBBC5 /* overviewViewControllerTests.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		26EFDE8E1D7CA8E900944B54 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				26EFDE8B1D7CA8B600944B54 /* UIAlertController+Collections.h */,
+				26EFDE8C1D7CA8B600944B54 /* UIAlertController+Collections.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		D6FD18ABB99B1C8FB98E8F24 /* Pods */ = {
@@ -453,6 +466,7 @@
 			files = (
 				26DBD4071D78885000A4630A /* ZABusStop.m in Sources */,
 				26EFDE871D7C860000944B54 /* ImageDownloader.m in Sources */,
+				26EFDE8D1D7CA8B600944B54 /* UIAlertController+Collections.m in Sources */,
 				26DBD3FF1D7836EB00A4630A /* ZAStopTableViewCell.m in Sources */,
 				262861F91D781D7B004FBBC5 /* ZAOverviewViewController.m in Sources */,
 				262861F61D781D7B004FBBC5 /* ZAAppDelegate.m in Sources */,
