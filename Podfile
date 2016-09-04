@@ -9,7 +9,7 @@ target 'zaragoza' do
 end
 
 target 'zaragozaTests' do
-
+    pod 'AFNetworking', '~> 3.0'
 end
 
 target 'zaragozaUITests' do

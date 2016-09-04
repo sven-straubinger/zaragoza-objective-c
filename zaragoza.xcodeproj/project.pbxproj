@@ -1,649 +1,1466 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		262861F31D781D7B004FBBC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 262861F21D781D7B004FBBC5 /* main.m */; };
-		262861F61D781D7B004FBBC5 /* ZAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 262861F51D781D7B004FBBC5 /* ZAAppDelegate.m */; };
-		262861F91D781D7B004FBBC5 /* ZAOverviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262861F81D781D7B004FBBC5 /* ZAOverviewViewController.m */; };
-		262861FC1D781D7B004FBBC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262861FA1D781D7B004FBBC5 /* Main.storyboard */; };
-		262861FE1D781D7B004FBBC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 262861FD1D781D7B004FBBC5 /* Assets.xcassets */; };
-		262862011D781D7B004FBBC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262861FF1D781D7B004FBBC5 /* LaunchScreen.storyboard */; };
-		2628620C1D781D7B004FBBC5 /* overviewViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2628620B1D781D7B004FBBC5 /* overviewViewControllerTests.m */; };
-		262862171D781D7B004FBBC5 /* zaragozaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 262862161D781D7B004FBBC5 /* zaragozaUITests.m */; };
-		26DBD3FF1D7836EB00A4630A /* ZAStopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DBD3FE1D7836EB00A4630A /* ZAStopTableViewCell.m */; };
-		26DBD4071D78885000A4630A /* ZABusStop.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DBD4061D78885000A4630A /* ZABusStop.m */; };
-		26DCA4411D7C651A00B8F757 /* rootViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DCA4401D7C651A00B8F757 /* rootViewControllerTest.m */; };
-		DE95BEC29BEFFA6040DE21C7 /* libPods-zaragoza.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 285F8E3FB3DD02E0ABC6376D /* libPods-zaragoza.a */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		262862081D781D7B004FBBC5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 262861E61D781D7B004FBBC5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 262861ED1D781D7B004FBBC5;
-			remoteInfo = zaragoza;
-		};
-		262862131D781D7B004FBBC5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 262861E61D781D7B004FBBC5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 262861ED1D781D7B004FBBC5;
-			remoteInfo = zaragoza;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		262861EE1D781D7B004FBBC5 /* zaragoza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zaragoza.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		262861F21D781D7B004FBBC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		262861F41D781D7B004FBBC5 /* ZAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZAAppDelegate.h; sourceTree = "<group>"; };
-		262861F51D781D7B004FBBC5 /* ZAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZAAppDelegate.m; sourceTree = "<group>"; };
-		262861F71D781D7B004FBBC5 /* ZAOverviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZAOverviewViewController.h; sourceTree = "<group>"; };
-		262861F81D781D7B004FBBC5 /* ZAOverviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZAOverviewViewController.m; sourceTree = "<group>"; };
-		262861FB1D781D7B004FBBC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		262861FD1D781D7B004FBBC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		262862001D781D7B004FBBC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		262862021D781D7B004FBBC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		262862071D781D7B004FBBC5 /* zaragozaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = zaragozaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2628620B1D781D7B004FBBC5 /* overviewViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = overviewViewControllerTests.m; sourceTree = "<group>"; };
-		2628620D1D781D7B004FBBC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		262862121D781D7B004FBBC5 /* zaragozaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = zaragozaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		262862161D781D7B004FBBC5 /* zaragozaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = zaragozaUITests.m; sourceTree = "<group>"; };
-		262862181D781D7B004FBBC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26DBD3FD1D7836EB00A4630A /* ZAStopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAStopTableViewCell.h; sourceTree = "<group>"; };
-		26DBD3FE1D7836EB00A4630A /* ZAStopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAStopTableViewCell.m; sourceTree = "<group>"; };
-		26DBD4051D78885000A4630A /* ZABusStop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZABusStop.h; sourceTree = "<group>"; };
-		26DBD4061D78885000A4630A /* ZABusStop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZABusStop.m; sourceTree = "<group>"; };
-		26DCA4401D7C651A00B8F757 /* rootViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rootViewControllerTest.m; sourceTree = "<group>"; };
-		285F8E3FB3DD02E0ABC6376D /* libPods-zaragoza.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-zaragoza.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B30766AC61D83CA0FD4A246A /* Pods-zaragoza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zaragoza.release.xcconfig"; path = "Pods/Target Support Files/Pods-zaragoza/Pods-zaragoza.release.xcconfig"; sourceTree = "<group>"; };
-		FCF9CCF83640E3D9BBFAC764 /* Pods-zaragoza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zaragoza.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zaragoza/Pods-zaragoza.debug.xcconfig"; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		262861EB1D781D7B004FBBC5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE95BEC29BEFFA6040DE21C7 /* libPods-zaragoza.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		262862041D781D7B004FBBC5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2628620F1D781D7B004FBBC5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		262861E51D781D7B004FBBC5 = {
-			isa = PBXGroup;
-			children = (
-				262861F01D781D7B004FBBC5 /* zaragoza */,
-				2628620A1D781D7B004FBBC5 /* zaragozaTests */,
-				262862151D781D7B004FBBC5 /* zaragozaUITests */,
-				262861EF1D781D7B004FBBC5 /* Products */,
-				D6FD18ABB99B1C8FB98E8F24 /* Pods */,
-				F2A46900EA63A3BB738AC2D5 /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		262861EF1D781D7B004FBBC5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				262861EE1D781D7B004FBBC5 /* zaragoza.app */,
-				262862071D781D7B004FBBC5 /* zaragozaTests.xctest */,
-				262862121D781D7B004FBBC5 /* zaragozaUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		262861F01D781D7B004FBBC5 /* zaragoza */ = {
-			isa = PBXGroup;
-			children = (
-				262861F41D781D7B004FBBC5 /* ZAAppDelegate.h */,
-				262861F51D781D7B004FBBC5 /* ZAAppDelegate.m */,
-				26DBD3FB1D78324E00A4630A /* Views */,
-				26DBD3FC1D78325300A4630A /* ViewControllers */,
-				26DBD4041D78882200A4630A /* Models */,
-				262861FA1D781D7B004FBBC5 /* Main.storyboard */,
-				262861FD1D781D7B004FBBC5 /* Assets.xcassets */,
-				262861FF1D781D7B004FBBC5 /* LaunchScreen.storyboard */,
-				262862021D781D7B004FBBC5 /* Info.plist */,
-				262861F11D781D7B004FBBC5 /* Supporting Files */,
-			);
-			path = zaragoza;
-			sourceTree = "<group>";
-		};
-		262861F11D781D7B004FBBC5 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				262861F21D781D7B004FBBC5 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		2628620A1D781D7B004FBBC5 /* zaragozaTests */ = {
-			isa = PBXGroup;
-			children = (
-				26DCA4421D7C654100B8F757 /* ViewControllers */,
-				2628620D1D781D7B004FBBC5 /* Info.plist */,
-			);
-			path = zaragozaTests;
-			sourceTree = "<group>";
-		};
-		262862151D781D7B004FBBC5 /* zaragozaUITests */ = {
-			isa = PBXGroup;
-			children = (
-				262862161D781D7B004FBBC5 /* zaragozaUITests.m */,
-				262862181D781D7B004FBBC5 /* Info.plist */,
-			);
-			path = zaragozaUITests;
-			sourceTree = "<group>";
-		};
-		26DBD3FB1D78324E00A4630A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				26DBD3FD1D7836EB00A4630A /* ZAStopTableViewCell.h */,
-				26DBD3FE1D7836EB00A4630A /* ZAStopTableViewCell.m */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		26DBD3FC1D78325300A4630A /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				262861F71D781D7B004FBBC5 /* ZAOverviewViewController.h */,
-				262861F81D781D7B004FBBC5 /* ZAOverviewViewController.m */,
-			);
-			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		26DBD4041D78882200A4630A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				26DBD4051D78885000A4630A /* ZABusStop.h */,
-				26DBD4061D78885000A4630A /* ZABusStop.m */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
-		26DCA4421D7C654100B8F757 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				26DCA4401D7C651A00B8F757 /* rootViewControllerTest.m */,
-				2628620B1D781D7B004FBBC5 /* overviewViewControllerTests.m */,
-			);
-			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		D6FD18ABB99B1C8FB98E8F24 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				FCF9CCF83640E3D9BBFAC764 /* Pods-zaragoza.debug.xcconfig */,
-				B30766AC61D83CA0FD4A246A /* Pods-zaragoza.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		F2A46900EA63A3BB738AC2D5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				285F8E3FB3DD02E0ABC6376D /* libPods-zaragoza.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		262861ED1D781D7B004FBBC5 /* zaragoza */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2628621B1D781D7B004FBBC5 /* Build configuration list for PBXNativeTarget "zaragoza" */;
-			buildPhases = (
-				89D0D05355EC6DEB383ACB18 /* Check Pods Manifest.lock */,
-				262861EA1D781D7B004FBBC5 /* Sources */,
-				262861EB1D781D7B004FBBC5 /* Frameworks */,
-				262861EC1D781D7B004FBBC5 /* Resources */,
-				6C35B6912CD543CEEF1F4D9A /* Embed Pods Frameworks */,
-				DBA29AA0A38F8AEEBB7F1A2D /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = zaragoza;
-			productName = zaragoza;
-			productReference = 262861EE1D781D7B004FBBC5 /* zaragoza.app */;
-			productType = "com.apple.product-type.application";
-		};
-		262862061D781D7B004FBBC5 /* zaragozaTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2628621E1D781D7B004FBBC5 /* Build configuration list for PBXNativeTarget "zaragozaTests" */;
-			buildPhases = (
-				262862031D781D7B004FBBC5 /* Sources */,
-				262862041D781D7B004FBBC5 /* Frameworks */,
-				262862051D781D7B004FBBC5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				262862091D781D7B004FBBC5 /* PBXTargetDependency */,
-			);
-			name = zaragozaTests;
-			productName = zaragozaTests;
-			productReference = 262862071D781D7B004FBBC5 /* zaragozaTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		262862111D781D7B004FBBC5 /* zaragozaUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 262862211D781D7B004FBBC5 /* Build configuration list for PBXNativeTarget "zaragozaUITests" */;
-			buildPhases = (
-				2628620E1D781D7B004FBBC5 /* Sources */,
-				2628620F1D781D7B004FBBC5 /* Frameworks */,
-				262862101D781D7B004FBBC5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				262862141D781D7B004FBBC5 /* PBXTargetDependency */,
-			);
-			name = zaragozaUITests;
-			productName = zaragozaUITests;
-			productReference = 262862121D781D7B004FBBC5 /* zaragozaUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		262861E61D781D7B004FBBC5 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = "Sven Straubinger";
-				TargetAttributes = {
-					262861ED1D781D7B004FBBC5 = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
-					262862061D781D7B004FBBC5 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 262861ED1D781D7B004FBBC5;
-					};
-					262862111D781D7B004FBBC5 = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = 262861ED1D781D7B004FBBC5;
-					};
-				};
-			};
-			buildConfigurationList = 262861E91D781D7B004FBBC5 /* Build configuration list for PBXProject "zaragoza" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = 262861E51D781D7B004FBBC5;
-			productRefGroup = 262861EF1D781D7B004FBBC5 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				262861ED1D781D7B004FBBC5 /* zaragoza */,
-				262862061D781D7B004FBBC5 /* zaragozaTests */,
-				262862111D781D7B004FBBC5 /* zaragozaUITests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		262861EC1D781D7B004FBBC5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				262862011D781D7B004FBBC5 /* LaunchScreen.storyboard in Resources */,
-				262861FE1D781D7B004FBBC5 /* Assets.xcassets in Resources */,
-				262861FC1D781D7B004FBBC5 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		262862051D781D7B004FBBC5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		262862101D781D7B004FBBC5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		6C35B6912CD543CEEF1F4D9A /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-zaragoza/Pods-zaragoza-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		89D0D05355EC6DEB383ACB18 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		DBA29AA0A38F8AEEBB7F1A2D /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-zaragoza/Pods-zaragoza-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		262861EA1D781D7B004FBBC5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				26DBD4071D78885000A4630A /* ZABusStop.m in Sources */,
-				26DBD3FF1D7836EB00A4630A /* ZAStopTableViewCell.m in Sources */,
-				262861F91D781D7B004FBBC5 /* ZAOverviewViewController.m in Sources */,
-				262861F61D781D7B004FBBC5 /* ZAAppDelegate.m in Sources */,
-				262861F31D781D7B004FBBC5 /* main.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		262862031D781D7B004FBBC5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				26DCA4411D7C651A00B8F757 /* rootViewControllerTest.m in Sources */,
-				2628620C1D781D7B004FBBC5 /* overviewViewControllerTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2628620E1D781D7B004FBBC5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				262862171D781D7B004FBBC5 /* zaragozaUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		262862091D781D7B004FBBC5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 262861ED1D781D7B004FBBC5 /* zaragoza */;
-			targetProxy = 262862081D781D7B004FBBC5 /* PBXContainerItemProxy */;
-		};
-		262862141D781D7B004FBBC5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 262861ED1D781D7B004FBBC5 /* zaragoza */;
-			targetProxy = 262862131D781D7B004FBBC5 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		262861FA1D781D7B004FBBC5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				262861FB1D781D7B004FBBC5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		262861FF1D781D7B004FBBC5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				262862001D781D7B004FBBC5 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		262862191D781D7B004FBBC5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-			};
-			name = Debug;
-		};
-		2628621A1D781D7B004FBBC5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		2628621C1D781D7B004FBBC5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCF9CCF83640E3D9BBFAC764 /* Pods-zaragoza.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = zaragoza/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = de.app.zeitfenster.zaragoza;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		2628621D1D781D7B004FBBC5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B30766AC61D83CA0FD4A246A /* Pods-zaragoza.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = zaragoza/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = de.app.zeitfenster.zaragoza;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		2628621F1D781D7B004FBBC5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = zaragozaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = de.app.zeitfenster.zaragozaTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/zaragoza.app/zaragoza";
-			};
-			name = Debug;
-		};
-		262862201D781D7B004FBBC5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = zaragozaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = de.app.zeitfenster.zaragozaTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/zaragoza.app/zaragoza";
-			};
-			name = Release;
-		};
-		262862221D781D7B004FBBC5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = zaragozaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = de.app.zeitfenster.zaragozaUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = zaragoza;
-			};
-			name = Debug;
-		};
-		262862231D781D7B004FBBC5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = zaragozaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = de.app.zeitfenster.zaragozaUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = zaragoza;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		262861E91D781D7B004FBBC5 /* Build configuration list for PBXProject "zaragoza" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				262862191D781D7B004FBBC5 /* Debug */,
-				2628621A1D781D7B004FBBC5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2628621B1D781D7B004FBBC5 /* Build configuration list for PBXNativeTarget "zaragoza" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2628621C1D781D7B004FBBC5 /* Debug */,
-				2628621D1D781D7B004FBBC5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2628621E1D781D7B004FBBC5 /* Build configuration list for PBXNativeTarget "zaragozaTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2628621F1D781D7B004FBBC5 /* Debug */,
-				262862201D781D7B004FBBC5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		262862211D781D7B004FBBC5 /* Build configuration list for PBXNativeTarget "zaragozaUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				262862221D781D7B004FBBC5 /* Debug */,
-				262862231D781D7B004FBBC5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 262861E61D781D7B004FBBC5 /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>262861E51D781D7B004FBBC5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>262861F01D781D7B004FBBC5</string>
+				<string>2628620A1D781D7B004FBBC5</string>
+				<string>262862151D781D7B004FBBC5</string>
+				<string>262861EF1D781D7B004FBBC5</string>
+				<string>D6FD18ABB99B1C8FB98E8F24</string>
+				<string>F2A46900EA63A3BB738AC2D5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>262861E61D781D7B004FBBC5</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0730</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>Sven Straubinger</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>262861ED1D781D7B004FBBC5</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.3.1</string>
+					</dict>
+					<key>262862061D781D7B004FBBC5</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.3.1</string>
+						<key>TestTargetID</key>
+						<string>262861ED1D781D7B004FBBC5</string>
+					</dict>
+					<key>262862111D781D7B004FBBC5</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.3.1</string>
+						<key>TestTargetID</key>
+						<string>262861ED1D781D7B004FBBC5</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>262861E91D781D7B004FBBC5</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>262861E51D781D7B004FBBC5</string>
+			<key>productRefGroup</key>
+			<string>262861EF1D781D7B004FBBC5</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>262861ED1D781D7B004FBBC5</string>
+				<string>262862061D781D7B004FBBC5</string>
+				<string>262862111D781D7B004FBBC5</string>
+			</array>
+		</dict>
+		<key>262861E91D781D7B004FBBC5</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>262862191D781D7B004FBBC5</string>
+				<string>2628621A1D781D7B004FBBC5</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>262861EA1D781D7B004FBBC5</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>26DBD4071D78885000A4630A</string>
+				<string>26DBD3FF1D7836EB00A4630A</string>
+				<string>262861F91D781D7B004FBBC5</string>
+				<string>262861F61D781D7B004FBBC5</string>
+				<string>262861F31D781D7B004FBBC5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>262861EB1D781D7B004FBBC5</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>DE95BEC29BEFFA6040DE21C7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>262861EC1D781D7B004FBBC5</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>262862011D781D7B004FBBC5</string>
+				<string>262861FE1D781D7B004FBBC5</string>
+				<string>262861FC1D781D7B004FBBC5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>262861ED1D781D7B004FBBC5</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>2628621B1D781D7B004FBBC5</string>
+			<key>buildPhases</key>
+			<array>
+				<string>89D0D05355EC6DEB383ACB18</string>
+				<string>262861EA1D781D7B004FBBC5</string>
+				<string>262861EB1D781D7B004FBBC5</string>
+				<string>262861EC1D781D7B004FBBC5</string>
+				<string>6C35B6912CD543CEEF1F4D9A</string>
+				<string>DBA29AA0A38F8AEEBB7F1A2D</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>zaragoza</string>
+			<key>productName</key>
+			<string>zaragoza</string>
+			<key>productReference</key>
+			<string>262861EE1D781D7B004FBBC5</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>262861EE1D781D7B004FBBC5</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>zaragoza.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>262861EF1D781D7B004FBBC5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>262861EE1D781D7B004FBBC5</string>
+				<string>262862071D781D7B004FBBC5</string>
+				<string>262862121D781D7B004FBBC5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>262861F01D781D7B004FBBC5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>262861F41D781D7B004FBBC5</string>
+				<string>262861F51D781D7B004FBBC5</string>
+				<string>26DBD3FB1D78324E00A4630A</string>
+				<string>26DBD3FC1D78325300A4630A</string>
+				<string>26DBD4041D78882200A4630A</string>
+				<string>262861FA1D781D7B004FBBC5</string>
+				<string>262861FD1D781D7B004FBBC5</string>
+				<string>262861FF1D781D7B004FBBC5</string>
+				<string>262862021D781D7B004FBBC5</string>
+				<string>262861F11D781D7B004FBBC5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>zaragoza</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>262861F11D781D7B004FBBC5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>262861F21D781D7B004FBBC5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>262861F21D781D7B004FBBC5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>262861F31D781D7B004FBBC5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>262861F21D781D7B004FBBC5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>262861F41D781D7B004FBBC5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ZAAppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>262861F51D781D7B004FBBC5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ZAAppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>262861F61D781D7B004FBBC5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>262861F51D781D7B004FBBC5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>262861F71D781D7B004FBBC5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ZAOverviewViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>262861F81D781D7B004FBBC5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ZAOverviewViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>262861F91D781D7B004FBBC5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>262861F81D781D7B004FBBC5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>262861FA1D781D7B004FBBC5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>262861FB1D781D7B004FBBC5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>262861FB1D781D7B004FBBC5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>262861FC1D781D7B004FBBC5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>262861FA1D781D7B004FBBC5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>262861FD1D781D7B004FBBC5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Assets.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>262861FE1D781D7B004FBBC5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>262861FD1D781D7B004FBBC5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>262861FF1D781D7B004FBBC5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>262862001D781D7B004FBBC5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>LaunchScreen.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>262862001D781D7B004FBBC5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/LaunchScreen.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>262862011D781D7B004FBBC5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>262861FF1D781D7B004FBBC5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>262862021D781D7B004FBBC5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>262862031D781D7B004FBBC5</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>26DCA4411D7C651A00B8F757</string>
+				<string>2628620C1D781D7B004FBBC5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>262862041D781D7B004FBBC5</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>68F97D83FD7D130CB8DF23E9</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>262862051D781D7B004FBBC5</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>262862061D781D7B004FBBC5</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>2628621E1D781D7B004FBBC5</string>
+			<key>buildPhases</key>
+			<array>
+				<string>6D87242BB41BBDC69FA76212</string>
+				<string>262862031D781D7B004FBBC5</string>
+				<string>262862041D781D7B004FBBC5</string>
+				<string>262862051D781D7B004FBBC5</string>
+				<string>BD91B11C40A9F5F3514B49D4</string>
+				<string>5BCB31992C5937DB65D3B7A3</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>262862091D781D7B004FBBC5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>zaragozaTests</string>
+			<key>productName</key>
+			<string>zaragozaTests</string>
+			<key>productReference</key>
+			<string>262862071D781D7B004FBBC5</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>262862071D781D7B004FBBC5</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>zaragozaTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>262862081D781D7B004FBBC5</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>262861E61D781D7B004FBBC5</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>262861ED1D781D7B004FBBC5</string>
+			<key>remoteInfo</key>
+			<string>zaragoza</string>
+		</dict>
+		<key>262862091D781D7B004FBBC5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>262861ED1D781D7B004FBBC5</string>
+			<key>targetProxy</key>
+			<string>262862081D781D7B004FBBC5</string>
+		</dict>
+		<key>2628620A1D781D7B004FBBC5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>26DCA4421D7C654100B8F757</string>
+				<string>2628620D1D781D7B004FBBC5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>zaragozaTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2628620B1D781D7B004FBBC5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>overviewViewControllerTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2628620C1D781D7B004FBBC5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2628620B1D781D7B004FBBC5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2628620D1D781D7B004FBBC5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2628620E1D781D7B004FBBC5</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>262862171D781D7B004FBBC5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>2628620F1D781D7B004FBBC5</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>262862101D781D7B004FBBC5</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>262862111D781D7B004FBBC5</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>262862211D781D7B004FBBC5</string>
+			<key>buildPhases</key>
+			<array>
+				<string>2628620E1D781D7B004FBBC5</string>
+				<string>2628620F1D781D7B004FBBC5</string>
+				<string>262862101D781D7B004FBBC5</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>262862141D781D7B004FBBC5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>zaragozaUITests</string>
+			<key>productName</key>
+			<string>zaragozaUITests</string>
+			<key>productReference</key>
+			<string>262862121D781D7B004FBBC5</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.ui-testing</string>
+		</dict>
+		<key>262862121D781D7B004FBBC5</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>zaragozaUITests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>262862131D781D7B004FBBC5</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>262861E61D781D7B004FBBC5</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>262861ED1D781D7B004FBBC5</string>
+			<key>remoteInfo</key>
+			<string>zaragoza</string>
+		</dict>
+		<key>262862141D781D7B004FBBC5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>262861ED1D781D7B004FBBC5</string>
+			<key>targetProxy</key>
+			<string>262862131D781D7B004FBBC5</string>
+		</dict>
+		<key>262862151D781D7B004FBBC5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>262862161D781D7B004FBBC5</string>
+				<string>262862181D781D7B004FBBC5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>zaragozaUITests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>262862161D781D7B004FBBC5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>zaragozaUITests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>262862171D781D7B004FBBC5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>262862161D781D7B004FBBC5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>262862181D781D7B004FBBC5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>262862191D781D7B004FBBC5</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENABLE_TESTABILITY</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.3</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>2628621A1D781D7B004FBBC5</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.3</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>2628621B1D781D7B004FBBC5</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>2628621C1D781D7B004FBBC5</string>
+				<string>2628621D1D781D7B004FBBC5</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>2628621C1D781D7B004FBBC5</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>FCF9CCF83640E3D9BBFAC764</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>INFOPLIST_FILE</key>
+				<string>zaragoza/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>de.app.zeitfenster.zaragoza</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>2628621D1D781D7B004FBBC5</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>B30766AC61D83CA0FD4A246A</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>INFOPLIST_FILE</key>
+				<string>zaragoza/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>de.app.zeitfenster.zaragoza</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>2628621E1D781D7B004FBBC5</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>2628621F1D781D7B004FBBC5</string>
+				<string>262862201D781D7B004FBBC5</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>2628621F1D781D7B004FBBC5</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>29CE0F0D99C700D7D7DFF1C6</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>INFOPLIST_FILE</key>
+				<string>zaragozaTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>de.app.zeitfenster.zaragozaTests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/zaragoza.app/zaragoza</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>262862201D781D7B004FBBC5</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>D6374D8B31280440609C31E4</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>INFOPLIST_FILE</key>
+				<string>zaragozaTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>de.app.zeitfenster.zaragozaTests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/zaragoza.app/zaragoza</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>262862211D781D7B004FBBC5</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>262862221D781D7B004FBBC5</string>
+				<string>262862231D781D7B004FBBC5</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>262862221D781D7B004FBBC5</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>INFOPLIST_FILE</key>
+				<string>zaragozaUITests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>de.app.zeitfenster.zaragozaUITests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_TARGET_NAME</key>
+				<string>zaragoza</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>262862231D781D7B004FBBC5</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>INFOPLIST_FILE</key>
+				<string>zaragozaUITests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>de.app.zeitfenster.zaragozaUITests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_TARGET_NAME</key>
+				<string>zaragoza</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>26DBD3FB1D78324E00A4630A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>26DBD3FD1D7836EB00A4630A</string>
+				<string>26DBD3FE1D7836EB00A4630A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Views</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>26DBD3FC1D78325300A4630A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>262861F71D781D7B004FBBC5</string>
+				<string>262861F81D781D7B004FBBC5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>ViewControllers</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>26DBD3FD1D7836EB00A4630A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ZAStopTableViewCell.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>26DBD3FE1D7836EB00A4630A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ZAStopTableViewCell.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>26DBD3FF1D7836EB00A4630A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>26DBD3FE1D7836EB00A4630A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>26DBD4041D78882200A4630A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>26DBD4051D78885000A4630A</string>
+				<string>26DBD4061D78885000A4630A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Models</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>26DBD4051D78885000A4630A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ZABusStop.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>26DBD4061D78885000A4630A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ZABusStop.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>26DBD4071D78885000A4630A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>26DBD4061D78885000A4630A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>26DCA4401D7C651A00B8F757</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>rootViewControllerTest.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>26DCA4411D7C651A00B8F757</key>
+		<dict>
+			<key>fileRef</key>
+			<string>26DCA4401D7C651A00B8F757</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>26DCA4421D7C654100B8F757</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>26DCA4401D7C651A00B8F757</string>
+				<string>2628620B1D781D7B004FBBC5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>ViewControllers</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>285F8E3FB3DD02E0ABC6376D</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-zaragoza.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>29CE0F0D99C700D7D7DFF1C6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-zaragozaTests.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-zaragozaTests/Pods-zaragozaTests.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3A8DCB9CF9E57CB441E18BE0</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-zaragozaTests.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>5BCB31992C5937DB65D3B7A3</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-zaragozaTests/Pods-zaragozaTests-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>68F97D83FD7D130CB8DF23E9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3A8DCB9CF9E57CB441E18BE0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6C35B6912CD543CEEF1F4D9A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-zaragoza/Pods-zaragoza-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>6D87242BB41BBDC69FA76212</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>89D0D05355EC6DEB383ACB18</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>B30766AC61D83CA0FD4A246A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-zaragoza.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-zaragoza/Pods-zaragoza.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BD91B11C40A9F5F3514B49D4</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-zaragozaTests/Pods-zaragozaTests-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>D6374D8B31280440609C31E4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-zaragozaTests.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-zaragozaTests/Pods-zaragozaTests.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D6FD18ABB99B1C8FB98E8F24</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FCF9CCF83640E3D9BBFAC764</string>
+				<string>B30766AC61D83CA0FD4A246A</string>
+				<string>29CE0F0D99C700D7D7DFF1C6</string>
+				<string>D6374D8B31280440609C31E4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DBA29AA0A38F8AEEBB7F1A2D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-zaragoza/Pods-zaragoza-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>DE95BEC29BEFFA6040DE21C7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>285F8E3FB3DD02E0ABC6376D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F2A46900EA63A3BB738AC2D5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>285F8E3FB3DD02E0ABC6376D</string>
+				<string>3A8DCB9CF9E57CB441E18BE0</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FCF9CCF83640E3D9BBFAC764</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-zaragoza.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-zaragoza/Pods-zaragoza.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>262861E61D781D7B004FBBC5</string>
+</dict>
+</plist>
