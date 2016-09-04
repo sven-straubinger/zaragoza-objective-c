@@ -121,7 +121,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
  *  ------------------------------------------------------------------------------- */
 
 /*  -------------------------------------------------------------------------------
- *   Begin additional data download for a specific index path.
+ *   Begin image download for a specific index path.
  *  ------------------------------------------------------------------------------- */
 - (void)startImageDownload:(ZABusStop *)busStop forIndexPath:(NSIndexPath *)indexPath {
     ImageDownloader *imageDownloader = (self.imageDownloadsInProgress)[indexPath];
@@ -145,12 +145,17 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
     }
 }
 
+/*  -------------------------------------------------------------------------------
+ *   Begin ETA download for a specific index path.
+ *  ------------------------------------------------------------------------------- */
 - (void)startEstimateDownload:(ZABusStop *)busStop forIndexPath:(NSIndexPath *)indexPath {
     ZAApiService *service = [ZAApiService sharedInstance];
     ZAStopTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     [service estimateForBusStopWithId:busStop.identifier
                      withSuccessBlock:^(ZAEstimate *estimate) {
+                         // Set estimate
                          busStop.estimate = estimate;
+                         
                          // Completion block runs on the main thread --> UI updates are fine
                          [cell.etaLabel setText:[NSString stringWithFormat:@"%ld Minutes", estimate.estimate]];
                      } failureBlock:^(NSString *errorMessage) {
@@ -169,12 +174,12 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
         for (NSIndexPath *indexPath in visiblePaths) {
             ZABusStop *busStop = (self.busStops)[indexPath.row];
             
-            // Avoid the image download if the bus stop already has an image
+            // Load image – if not already set
             if (!busStop.image) {
                 [self startImageDownload:busStop forIndexPath:indexPath];
             }
             
-            // Avoid the estimate download if bus stop already has an estimate
+            // Load estimate – if not already set
             if (!busStop.estimate) {
                 [self startEstimateDownload:busStop forIndexPath:indexPath];
             }
