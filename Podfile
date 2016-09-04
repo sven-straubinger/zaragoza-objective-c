@@ -4,7 +4,8 @@ platform :ios, '9.0'
 # use_frameworks!
 
 target 'zaragoza' do
-pod 'AFNetworking', '~> 3.0'
+    pod 'AFNetworking', '~> 3.0'
+    pod 'EasyMapping', '~> 0.15.0'
 end
 
 target 'zaragozaTests' do
