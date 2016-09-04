@@ -21,6 +21,7 @@
 		26EFDE871D7C860000944B54 /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EFDE861D7C860000944B54 /* ImageDownloader.m */; };
 		26EFDE8D1D7CA8B600944B54 /* UIAlertController+Collections.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EFDE8C1D7CA8B600944B54 /* UIAlertController+Collections.m */; };
 		26EFDE931D7CAF1700944B54 /* ZAApiService.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EFDE921D7CAF1700944B54 /* ZAApiService.m */; };
+		26EFDE971D7CB2FD00944B54 /* ZAEstimate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EFDE961D7CB2FD00944B54 /* ZAEstimate.m */; };
 		68F97D83FD7D130CB8DF23E9 /* libPods-zaragozaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8DCB9CF9E57CB441E18BE0 /* libPods-zaragozaTests.a */; };
 		DE95BEC29BEFFA6040DE21C7 /* libPods-zaragoza.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 285F8E3FB3DD02E0ABC6376D /* libPods-zaragoza.a */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,8 @@
 		26EFDE8C1D7CA8B600944B54 /* UIAlertController+Collections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Collections.m"; sourceTree = "<group>"; };
 		26EFDE911D7CAF1700944B54 /* ZAApiService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAApiService.h; sourceTree = "<group>"; };
 		26EFDE921D7CAF1700944B54 /* ZAApiService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAApiService.m; sourceTree = "<group>"; };
+		26EFDE951D7CB2FD00944B54 /* ZAEstimate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAEstimate.h; sourceTree = "<group>"; };
+		26EFDE961D7CB2FD00944B54 /* ZAEstimate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAEstimate.m; sourceTree = "<group>"; };
 		285F8E3FB3DD02E0ABC6376D /* libPods-zaragoza.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-zaragoza.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CE0F0D99C700D7D7DFF1C6 /* Pods-zaragozaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zaragozaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-zaragozaTests/Pods-zaragozaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3A8DCB9CF9E57CB441E18BE0 /* libPods-zaragozaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-zaragozaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +198,8 @@
 			children = (
 				26DBD4051D78885000A4630A /* ZABusStop.h */,
 				26DBD4061D78885000A4630A /* ZABusStop.m */,
+				26EFDE951D7CB2FD00944B54 /* ZAEstimate.h */,
+				26EFDE961D7CB2FD00944B54 /* ZAEstimate.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -477,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26EFDE971D7CB2FD00944B54 /* ZAEstimate.m in Sources */,
 				26DBD4071D78885000A4630A /* ZABusStop.m in Sources */,
 				26EFDE871D7C860000944B54 /* ImageDownloader.m in Sources */,
 				26EFDE8D1D7CA8B600944B54 /* UIAlertController+Collections.m in Sources */,
