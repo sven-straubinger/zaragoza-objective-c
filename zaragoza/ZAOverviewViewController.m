@@ -44,23 +44,37 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
     
     [self.stops addObjectsFromArray:@[s1, s2, s3]];
     
-    [self requestDataAsJson];
+    // Define onSuccess block
+    void (^onSuccess)(NSURLSessionTask*, id) = ^(NSURLSessionTask *task, id responseObject) {
+        NSLog(@"JSON %@", responseObject);
+    };
+    
+    // Define onFailure block
+    void (^onFailure)(NSURLSessionTask*, NSError*) = ^(NSURLSessionTask* task, NSError *error) {
+        NSLog(@"Error: %@", error);
+    };
+    
+    // Execute HTTP GET request
+    [self requestUrl:@"http://api.dndzgz.com/services/bus"
+    withSuccessBlock:onSuccess
+             failureBlock:onFailure];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-#warning Move implementation to own service
 #pragma mark - AFNetworking
-
-- (void)requestDataAsJson {
+#warning Move implementation to own service
+- (void)requestUrl:(NSString *)url
+  withSuccessBlock:(void (^)(NSURLSessionTask *task, id responseObject))onSuccess
+      failureBlock:(void (^)(NSURLSessionTask *task, NSError *error))onFailure {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:@"http://api.dndzgz.com/services/bus" parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-    } failure:^(NSURLSessionTask *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
+    [manager GET:url
+      parameters:nil
+        progress:nil
+         success:onSuccess
+         failure:onFailure];
 }
 
 #pragma mark - Table view data source
