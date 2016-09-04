@@ -147,9 +147,9 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
 
 /*  -------------------------------------------------------------------------------
  *   This method is used in case the user scrolled into a set of cells that don't
- *   have their image yet.
+ *   have their additional data (image & ETA) yet.
  *  ------------------------------------------------------------------------------- */
-- (void)loadImagesForOnscreenRows {
+- (void)loadDataAdditionsForOnscreenRows {
     if ([self.busStops count] > 0) {
         NSArray *visiblePaths = [self.tableView indexPathsForVisibleRows];
         for (NSIndexPath *indexPath in visiblePaths) {
@@ -168,7 +168,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
  *  ------------------------------------------------------------------------------- */
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     if (!decelerate) {
-        [self loadImagesForOnscreenRows];
+        [self loadDataAdditionsForOnscreenRows];
     }
 }
 
@@ -176,7 +176,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
  *   When scrolling stops, proceed to load the app icons that are on screen.
  *  ------------------------------------------------------------------------------- */
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    [self loadImagesForOnscreenRows];
+    [self loadDataAdditionsForOnscreenRows];
 }
 
 /*  -------------------------------------------------------------------------------
