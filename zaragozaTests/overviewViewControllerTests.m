@@ -22,6 +22,7 @@
     // Load view controller from storyboard
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"ZAOverviewViewController"];
+    [self.viewController performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];
 }
 
 - (void)tearDown {
@@ -29,9 +30,8 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)testThatViewLoads {
+    XCTAssertNotNil(self.viewController.view, @"View not initiated properly.");
 }
 
 #warning Review performance test
