@@ -8,15 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <AFNetworking.h>
+#import "ZABusStop.h"
 #import "ZAEstimate.h"
 
 @interface ZAApiService : NSObject
 
 + (instancetype)sharedInstance;
 
-- (void)requestUrl:(NSString *)url
-  withSuccessBlock:(void (^)(NSURLSessionTask *task, id responseObject))onSuccess
-      failureBlock:(void (^)(NSURLSessionTask *task, NSError *error))onFailure;
+- (void)requestBusStopsWithSuccessBlock:(void (^)(NSArray *busStops))onSuccess
+                           failureBlock:(void (^)(NSString *errorMessage))onFailure;
 
 - (void)estimateForBusStopWithId:(NSString*)identifier
             withSuccessBlock:(void (^)(ZAEstimate *estimate))onSuccess

@@ -8,9 +8,11 @@
 
 #import "ZAApiService.h"
 
-static NSString *kEstimateBasePath = @"http://api.dndzgz.com/services/bus";
+static NSString *kApiBasePath = @"http://api.dndzgz.com/services/bus";
 
 @implementation ZAApiService
+
+#pragma mark - Public Methods
 
 + (instancetype)sharedInstance {
     static ZAApiService *sharedInstance = nil;
@@ -22,23 +24,43 @@ static NSString *kEstimateBasePath = @"http://api.dndzgz.com/services/bus";
     return sharedInstance;
 }
 
-- (void)requestUrl:(NSString *)url
-  withSuccessBlock:(void (^)(NSURLSessionTask *task, id responseObject))onSuccess
-      failureBlock:(void (^)(NSURLSessionTask *task, NSError *error))onFailure {
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:url
-      parameters:nil
-        progress:nil
-         success:onSuccess     // Please note from the docs: Since we did not specify any dispatch queue,
-         failure:onFailure];   // the main queue is used for all completion blocks --> so UI updates are fine.
+- (void)requestBusStopsWithSuccessBlock:(void (^)(NSArray *busStops))onSuccess
+                           failureBlock:(void (^)(NSString *errorMessage))onFailure {
+    
+    // First, Define request-onSuccess block
+    void (^onRequestSuccess)(NSURLSessionTask*, id) = ^(NSURLSessionTask *task, id responseObject) {
+        
+        // The responseObject should be a NSDictionary, early return if not
+        if(![responseObject isKindOfClass:[NSDictionary class]]) {
+            NSLog(@"Response object is not kind of class `NSDictionary`.");
+            return;
+        }
+        
+        // Retrieve locations
+        NSArray *locations = [responseObject valueForKey:@"locations"];
+        NSArray *busStops = [EKMapper arrayOfObjectsFromExternalRepresentation:locations
+                                                               withMapping:[ZABusStop objectMapping]];
+        onSuccess(busStops);
+    };
+    
+    // Second, define request-onFailure block
+    void (^onRequestFailure)(NSURLSessionTask*, NSError*) = ^(NSURLSessionTask *task, NSError *error) {
+        onFailure(error.localizedDescription);
+    };
+    
+    // Finally: Execute request
+    [self requestUrl:kApiBasePath
+    withSuccessBlock:onRequestSuccess
+        failureBlock:onRequestFailure];
 }
+
 
 - (void)estimateForBusStopWithId:(NSString*)identifier
             withSuccessBlock:(void (^)(ZAEstimate *estimate))onSuccess
                 failureBlock:(void (^)(NSString *errorMessage))onFailure {
     
     // Define url
-    NSString *url = [NSString stringWithFormat:@"%@/%@", kEstimateBasePath, identifier];
+    NSString *url = [NSString stringWithFormat:@"%@/%@", kApiBasePath, identifier];
     
     // Define request-onSuccess block
     void (^onRequestSuccess)(NSURLSessionTask*, id) = ^(NSURLSessionTask *task, id responseObject) {
@@ -77,5 +99,20 @@ static NSString *kEstimateBasePath = @"http://api.dndzgz.com/services/bus";
     withSuccessBlock:onRequestSuccess
         failureBlock:onRequestFailure];
 }
+
+
+#pragma mark - Private Method
+
+- (void)requestUrl:(NSString *)url
+  withSuccessBlock:(void (^)(NSURLSessionTask *task, id responseObject))onSuccess
+      failureBlock:(void (^)(NSURLSessionTask *task, NSError *error))onFailure {
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:url
+      parameters:nil
+        progress:nil
+         success:onSuccess     // Please note from the docs: Since we did not specify any dispatch queue,
+         failure:onFailure];   // the main queue is used for all completion blocks --> so UI updates are fine.
+}
+
 
 @end
