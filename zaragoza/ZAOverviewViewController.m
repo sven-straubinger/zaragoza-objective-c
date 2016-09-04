@@ -121,7 +121,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
  *  ------------------------------------------------------------------------------- */
 
 /*  -------------------------------------------------------------------------------
- *   Begin an image download for a specific index path.
+ *   Begin additional data download for a specific index path.
  *  ------------------------------------------------------------------------------- */
 - (void)startImageDownload:(ZABusStop *)busStop forIndexPath:(NSIndexPath *)indexPath {
     ImageDownloader *imageDownloader = (self.imageDownloadsInProgress)[indexPath];
@@ -145,6 +145,20 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
     }
 }
 
+- (void)startEstimateDownload:(ZABusStop *)busStop forIndexPath:(NSIndexPath *)indexPath {
+    ZAApiService *service = [ZAApiService sharedInstance];
+    ZAStopTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    [service estimateForBusStopWithId:busStop.identifier
+                     withSuccessBlock:^(ZAEstimate *estimate) {
+                         busStop.estimate = estimate;
+                         // Completion block runs on the main thread --> UI updates are fine
+                         [cell.etaLabel setText:[NSString stringWithFormat:@"%ld Minutes", estimate.estimate]];
+                     } failureBlock:^(NSString *errorMessage) {
+                         NSLog(@"%@", errorMessage);
+                         [cell.etaLabel setText:@"An error occured."];
+                     }];
+}
+
 /*  -------------------------------------------------------------------------------
  *   This method is used in case the user scrolled into a set of cells that don't
  *   have their additional data (image & ETA) yet.
@@ -155,23 +169,14 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
         for (NSIndexPath *indexPath in visiblePaths) {
             ZABusStop *busStop = (self.busStops)[indexPath.row];
             
-            // Avoid the image download if the app already has an icon
+            // Avoid the image download if the bus stop already has an image
             if (!busStop.image) {
                 [self startImageDownload:busStop forIndexPath:indexPath];
             }
             
+            // Avoid the estimate download if bus stop already has an estimate
             if (!busStop.estimate) {
-                ZAApiService *service = [ZAApiService sharedInstance];
-                [service estimateForBusStopWithId:busStop.identifier
-                                 withSuccessBlock:^(ZAEstimate *estimate) {
-                                     busStop.estimate = estimate;
-#warning Update ETA cell text
-                                     // Completion block runs on the main thread --> UI updates are fine
-                                 } failureBlock:^(NSString *errorMessage) {
-                                     NSLog(@"%@", errorMessage);
-#warning Update ETA cell text
-                                     // Completion block runs on the main thread --> UI updates are fine
-                                 }];
+                [self startEstimateDownload:busStop forIndexPath:indexPath];
             }
         }
     }
