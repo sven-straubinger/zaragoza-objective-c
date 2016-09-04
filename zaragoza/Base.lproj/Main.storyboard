@@ -77,7 +77,7 @@
                                         <connections>
                                             <outlet property="etaLabel" destination="5lj-Md-n8w" id="n1R-Il-8Z5"/>
                                             <outlet property="identifierLabel" destination="cjH-xN-QAP" id="3gF-dv-Ern"/>
-                                            <outlet property="mapImageView" destination="aW0-7Y-2bf" id="lNv-Xu-A8t"/>
+                                            <outlet property="mapImageView" destination="aW0-7Y-2bf" id="XXl-RQ-wuQ"/>
                                             <outlet property="nameLabel" destination="h8m-xK-R1e" id="ZFE-aJ-KoX"/>
                                         </connections>
                                     </tableViewCell>
