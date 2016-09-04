@@ -11,6 +11,7 @@
 
 @interface ZAOverviewViewController : UIViewController
 
+@property(nonatomic, weak) IBOutlet UITableView *tableView;
 
 @end
 

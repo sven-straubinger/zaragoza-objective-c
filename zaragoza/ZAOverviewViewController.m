@@ -14,7 +14,6 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
 
 @interface ZAOverviewViewController () <UITableViewDelegate, UITableViewDataSource>
 
-@property(nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *stops;
 
 @end
