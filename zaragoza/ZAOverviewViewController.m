@@ -8,8 +8,8 @@
 
 #import "ZAOverviewViewController.h"
 #import "ZABusStop.h"
-#import "ZAStopTableViewCell.h"
 #import "ImageDownloader.h"
+#import "ZAStopTableViewCell.h"
 #import "UIAlertController+Collections.h"
 #import "ZAApiService.h"
 
@@ -17,11 +17,14 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
 
 @interface ZAOverviewViewController () <UITableViewDelegate, UITableViewDataSource>
 
-// List of all bus stops
+// Storage for all bus stops
 @property (nonatomic, strong) NSArray *busStops;
 
-// Set of ImageDownloader objects for each bus stop map-image
+// Storage for all pending ImageDownloader objects
 @property (nonatomic, strong) NSMutableDictionary *imageDownloadsInProgress;
+
+// Reference to API service (Singleton) for easier reusability
+@property (nonatomic, strong) ZAApiService *apiService;
 
 @end
 
@@ -33,38 +36,23 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
     // Initalize properties
     self.busStops = [[NSArray alloc]init];
     self.imageDownloadsInProgress = [NSMutableDictionary dictionary];
-    
-    // Define onSuccess block
-    void (^onSuccess)(NSURLSessionTask*, id) = ^(NSURLSessionTask *task, id responseObject) {
+    self.apiService = [ZAApiService sharedInstance];
         
-        // The responseObject should be a NSDictionary, early return if not
-        if(![responseObject isKindOfClass:[NSDictionary class]]) {
-            NSLog(@"Response object is not kind of class `NSDictionary`.");
-            return;
-        }
+    // Request all bus stops
+    [self.apiService requestBusStopsWithSuccessBlock:^(NSArray *busStops) {
         
-        // Retrieve locations
-        NSArray *locations = [responseObject valueForKey:@"locations"];
-        self.busStops = [EKMapper arrayOfObjectsFromExternalRepresentation:locations
-                                                            withMapping:[ZABusStop objectMapping]];
-        // Reload table view
+        // Store result
+        self.busStops = busStops;
+        
+        // Update UI (where are on the main thread and safe)
         [self.tableView reloadData];
-
-    };
-    
-    // Define onFailure block - display alert
-    void (^onFailure)(NSURLSessionTask*, NSError*) = ^(NSURLSessionTask* task, NSError *error) {
+        
+    } failureBlock:^(NSString *errorMessage) {
         UIAlertController *alert = [UIAlertController controllerWithTitle:@"An error occured"
-                                                                  message:error.localizedDescription
+                                                                  message:errorMessage
                                                               actionTitle:@"Ok"];
         [self presentViewController:alert animated:YES completion:nil];
-    };
-    
-    // Execute GET request
-    ZAApiService *apiService = [ZAApiService sharedInstance];
-    [apiService requestUrl:@"http://api.dndzgz.com/services/bus"
-          withSuccessBlock:onSuccess
-              failureBlock:onFailure];
+    }];
 }
 
 
@@ -173,7 +161,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
                          // Update UI, completion block runs on the main thread
                          ZAStopTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
                          [cell.etaLabel setText:@"An error occured."];
-                         
+ 
                      }];
 }
 
