@@ -60,11 +60,11 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    [self terminateAllDownloads];
+    [self terminateAllImageDownloads];
 }
 
 - (void)dealloc {
-    [self terminateAllDownloads];
+    [self terminateAllImageDownloads];
 }
 
 
@@ -207,7 +207,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
 /*  -------------------------------------------------------------------------------
  *   Terminate all pending image downloads.
  *  ------------------------------------------------------------------------------- */
-- (void)terminateAllDownloads {
+- (void)terminateAllImageDownloads {
     // Terminate all pending download connections
     NSArray *allDownloads = [self.imageDownloadsInProgress allValues];
     [allDownloads makeObjectsPerformSelector:@selector(cancelDownload)];
