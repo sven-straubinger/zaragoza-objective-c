@@ -46,7 +46,17 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
     
     // Define onSuccess block
     void (^onSuccess)(NSURLSessionTask*, id) = ^(NSURLSessionTask *task, id responseObject) {
-        NSLog(@"JSON %@", responseObject);
+        /* responseObject is either an NSArray or NSDictionary */
+        /*
+         {} JSON
+           {} lines
+           [] locations
+             {} 0
+               "id"
+               "title"
+             {} 1
+             ...
+         */
     };
     
     // Define onFailure block
