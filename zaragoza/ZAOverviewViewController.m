@@ -155,9 +155,23 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
         for (NSIndexPath *indexPath in visiblePaths) {
             ZABusStop *busStop = (self.busStops)[indexPath.row];
             
-            // Avoid the app icon download if the app already has an icon
+            // Avoid the image download if the app already has an icon
             if (!busStop.image) {
                 [self startImageDownload:busStop forIndexPath:indexPath];
+            }
+            
+            if (!busStop.estimate) {
+                ZAApiService *service = [ZAApiService sharedInstance];
+                [service estimateForBusStopWithId:busStop.identifier
+                                 withSuccessBlock:^(ZAEstimate *estimate) {
+                                     busStop.estimate = estimate;
+#warning Update ETA cell text
+                                     // Completion block runs on the main thread --> UI updates are fine
+                                 } failureBlock:^(NSString *errorMessage) {
+                                     NSLog(@"%@", errorMessage);
+#warning Update ETA cell text
+                                     // Completion block runs on the main thread --> UI updates are fine
+                                 }];
             }
         }
     }
