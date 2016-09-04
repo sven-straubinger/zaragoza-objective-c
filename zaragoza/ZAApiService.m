@@ -8,6 +8,8 @@
 
 #import "ZAApiService.h"
 
+static NSString *kEstimateBasePath = @"http://api.dndzgz.com/services/bus";
+
 @implementation ZAApiService
 
 + (instancetype)sharedInstance {
@@ -30,5 +32,50 @@
          success:onSuccess
          failure:onFailure];
 }
+
+- (void)estimateForBusStopWithId:(NSString*)identifier
+            withSuccessBlock:(void (^)(ZAEstimate *estimate))onSuccess
+                failureBlock:(void (^)(NSString *errorMessage))onFailure {
+    
+    // Define url
+    NSString *url = [NSString stringWithFormat:@"%@/%@", kEstimateBasePath, identifier];
+    
+    // Define request-onSuccess block
+    void (^onRequestSuccess)(NSURLSessionTask*, id) = ^(NSURLSessionTask *task, id responseObject) {
+        
+        // The responseObject should be a NSDictionary, early return if not
+        if(![responseObject isKindOfClass:[NSDictionary class]]) {
+            onFailure(@"Response object is not kind of class `NSDictionary`.");
+            return;
+        }
+        
+        // Retrieve estimates
+        NSArray *rawEstimates = [responseObject valueForKey:@"estimates"];
+        NSArray *estimates = [EKMapper arrayOfObjectsFromExternalRepresentation:rawEstimates
+                                                                    withMapping:[ZAEstimate objectMapping]];
+        // Sort to retrieve shortest estimate first
+        NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"estimate" ascending:YES]];
+        NSArray *sortedEstimates = [estimates sortedArrayUsingDescriptors:sortDescriptors];
+        ZAEstimate *head = sortedEstimates.firstObject;
+        
+        // Check, if result is a non-nil value
+        if(head) {
+            onSuccess(head);
+        } else {
+            onFailure(@"No results were returned.");
+        }
+    };
+    
+    // Define request-onFailure block
+    void (^onRequestFailure)(NSURLSessionTask*, NSError*) = ^(NSURLSessionTask *task, NSError *error) {
+        onFailure(error.localizedDescription);
+    };
+    
+    // Execute request
+    [self requestUrl:url
+    withSuccessBlock:onRequestSuccess
+        failureBlock:onRequestFailure];
+}
+
 
 @end
