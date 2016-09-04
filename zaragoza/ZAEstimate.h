@@ -13,6 +13,6 @@
 
 @property(nonatomic, strong) NSString *line;
 @property(nonatomic, strong) NSString *direction;
-@property(nonatomic, strong) NSString *estimate;
+@property(nonatomic, assign) NSInteger estimate;
 
 @end
