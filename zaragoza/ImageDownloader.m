@@ -32,7 +32,7 @@
 
                                                        
         if (error != nil) {
-            NSLog(error.localizedDescription);
+            NSLog(@"%@", error.localizedDescription);
             return;
         }
                                                        
