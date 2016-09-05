@@ -118,7 +118,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
             [self startImageDownload:busStop forIndexPath:indexPath];
         }
         // If a download is deferred or in progress, return a placeholder image
-        cell.mapImageView.image = [UIImage imageNamed:@"placeholder.png"];
+        cell.mapImageView.image = nil;
     } else {
         cell.mapImageView.image = busStop.image;
     }
@@ -155,8 +155,17 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
             
             ZAStopTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
             
-            // Display the newly loaded image
+            // Apply start values for animation
+            [cell.mapImageView setAlpha:0.0];
+            
+            // Set image
             cell.mapImageView.image = busStop.image;
+            
+            // Animate
+            [UIView animateWithDuration:0.3
+                             animations:^{
+                                 [cell.mapImageView setAlpha:1.0];
+                             }];
             
             // Remove the ImageDownloade from the in progress list.
             // This will result in it being deallocated.
