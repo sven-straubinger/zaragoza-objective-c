@@ -240,7 +240,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
     
-    // Load additional data (image & estimate) for all onscreen rows when scrolling is finished.
+    // Load additional data (image & estimate) for all onscreen rows when scrolling has finished.
     if (!decelerate) {
         [self loadDataAdditionsForOnscreenRows];
     }
