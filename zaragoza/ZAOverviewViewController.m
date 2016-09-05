@@ -152,14 +152,15 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
  *   https://developer.apple.com/library/ios/samplecode/LazyTableImages/Introduction/Intro.html
  *  ------------------------------------------------------------------------------- */
 
-/*  -------------------------------------------------------------------------------
- *   Begin image download for a specific index path.
- *  ------------------------------------------------------------------------------- */
 - (void)startImageDownload:(ZABusStop *)busStop forIndexPath:(NSIndexPath *)indexPath {
+    
+    // Begin image download for a specific index path
     ZAImageDownloader *imageDownloader = (self.imageDownloadsInProgress)[indexPath];
     if (imageDownloader == nil) {
         imageDownloader = [[ZAImageDownloader alloc] init];
         imageDownloader.busStop = busStop;
+        
+        // Set completion handler
         [imageDownloader setCompletionHandler:^{
             
             ZAStopTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
@@ -181,18 +182,21 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
             [self.imageDownloadsInProgress removeObjectForKey:indexPath];
             
         }];
+        
+        // Store object in dictionary and start download
         (self.imageDownloadsInProgress)[indexPath] = imageDownloader;
         [imageDownloader startDownload];
     }
+
 }
 
-/*  -------------------------------------------------------------------------------
- *   Begin ETA download for a specific index path.
- *  ------------------------------------------------------------------------------- */
 - (void)startEstimateDownload:(ZABusStop *)busStop forIndexPath:(NSIndexPath *)indexPath {
+    
+    // Begin estimate download for a specific index path
     ZAApiService *service = [ZAApiService sharedInstance];
     [service estimateForBusStopWithId:busStop.identifier
                      withSuccessBlock:^(ZAEstimate *estimate) {
+                         
                          // Store estimate
                          busStop.estimate = estimate;
                          
@@ -210,12 +214,13 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
                      }];
 }
 
-/*  -------------------------------------------------------------------------------
- *   This method is used in case the user scrolled into a set of cells that don't
- *   have their additional data (image & ETA) yet.
- *  ------------------------------------------------------------------------------- */
 - (void)loadDataAdditionsForOnscreenRows {
+    
+    // This method is used in case the user scrolled into a set of cells that don't
+    // have their additional data (image & estimate) yet.
+    
     if ([self.busStops count] > 0) {
+        // Get indexPaths of visible rows
         NSArray *visiblePaths = [self.tableView indexPathsForVisibleRows];
         for (NSIndexPath *indexPath in visiblePaths) {
             ZABusStop *busStop = (self.busStops)[indexPath.row];
@@ -233,27 +238,23 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
     }
 }
 
-/*  -------------------------------------------------------------------------------
- *   Load additional data (image & ETA) for all onscreen rows when scrolling is finished.
- *  ------------------------------------------------------------------------------- */
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    
+    // Load additional data (image & estimate) for all onscreen rows when scrolling is finished.
     if (!decelerate) {
         [self loadDataAdditionsForOnscreenRows];
     }
 }
 
-/*  -------------------------------------------------------------------------------
- *   When scrolling stops, proceed to load additional data (images & ETA) for images that are on screen.
- *  ------------------------------------------------------------------------------- */
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    
+    // When scrolling stops, proceed to load additional data (images & ETA) for images that are on screen.
     [self loadDataAdditionsForOnscreenRows];
 }
 
-/*  -------------------------------------------------------------------------------
- *   Terminate all pending image downloads.
- *  ------------------------------------------------------------------------------- */
 - (void)terminateAllImageDownloads {
-    // Terminate all pending download connections
+    
+    // Terminate all pending image download connections.
     NSArray *allDownloads = [self.imageDownloadsInProgress allValues];
     [allDownloads makeObjectsPerformSelector:@selector(cancelDownload)];
     
