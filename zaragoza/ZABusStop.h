@@ -17,7 +17,7 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) NSURL *imageUrl;
-@property (nonatomic, strong) ZAEstimate *estimate;
+@property (nonatomic, strong) ZAEstimate *estimate; // From the returned JSON, we only select the most relevant one
 @property (nonatomic, assign) double lat;
 @property (nonatomic, assign) double lng;
 
