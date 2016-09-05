@@ -12,7 +12,7 @@ static NSString *kImageBasePath= @"http://maps.googleapis.com/maps/api/staticmap
 
 @implementation ZABusStop
 
-+(EKObjectMapping *)objectMapping
++ (EKObjectMapping *)objectMapping
 {
     return [EKObjectMapping mappingForClass:self withBlock:^(EKObjectMapping *mapping) {
         [mapping mapKeyPath:@"id" toProperty:@"identifier"];

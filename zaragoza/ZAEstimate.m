@@ -10,7 +10,7 @@
 
 @implementation ZAEstimate
 
-+(EKObjectMapping *)objectMapping
++ (EKObjectMapping *)objectMapping
 {
     return [EKObjectMapping mappingForClass:self withBlock:^(EKObjectMapping *mapping) {
         [mapping mapPropertiesFromArray:@[@"line", @"direction", @"estimate"]];
