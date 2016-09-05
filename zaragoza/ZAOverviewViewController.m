@@ -135,10 +135,10 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
             [self startEstimateDownload:busStop forIndexPath:indexPath];
         }
         // No data available ATM, show loading hint
-        cell.etaLabel.text = @"Loading ...";
+        [cell.etaLabel setText:[busStop formattedEstimateText]];
     } else {
         // Set cached estiamte
-        [cell.etaLabel setText:[NSString stringWithFormat:@"%ld Minutes", busStop.estimate.estimate]];
+        [cell.etaLabel setText:[busStop formattedEstimateText]];
     }
     
     return cell;
@@ -198,7 +198,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
                          
                          // Update UI, completion block runs on the main thread
                          ZAStopTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-                         [cell.etaLabel setText:[NSString stringWithFormat:@"%ld Minutes", estimate.estimate]];
+                         [cell.etaLabel setText:[busStop formattedEstimateText]];
                          
                      } failureBlock:^(NSString *errorMessage) {
                          DLog(@"%@", errorMessage);

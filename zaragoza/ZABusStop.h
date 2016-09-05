@@ -21,4 +21,6 @@
 @property (nonatomic, assign) double lat;
 @property (nonatomic, assign) double lng;
 
+- (NSString*)formattedEstimateText;
+
 @end

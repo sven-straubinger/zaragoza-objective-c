@@ -41,4 +41,16 @@ static NSString *kImageBasePath= @"http://maps.googleapis.com/maps/api/staticmap
     return components.URL;
 }
 
+- (NSString*)formattedEstimateText {
+    
+    // If an estimate is available, return formatted text ...
+    if(self.estimate) {
+        return [NSString stringWithFormat:@"%ld minutes via line %@", self.estimate.estimate, self.estimate.line];
+    } else {
+        // ... or a loading hint otherwise
+        return @"Loading ...";
+    }
+    
+}
+
 @end
