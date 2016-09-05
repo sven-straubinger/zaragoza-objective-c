@@ -25,19 +25,20 @@ const CGFloat maxImageSize = 200;
 - (void)startDownload {
     NSURLRequest *request = [NSURLRequest requestWithURL:self.busStop.imageUrl];
 
-    // Create a session data task to obtain and download the app icon
+    // Create a session data task to obtain and download the image
     self.sessionTask = [[NSURLSession sharedSession]
                         dataTaskWithRequest:request
                         completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
     
         NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
                    
-        // Early returns
+        // Early return on error
         if (error != nil) {
             DLog(@"%@", error.localizedDescription);
             return;
         }
-                                                       
+        
+        // Early return on wrong status code
         if(statusCode != 200) {
             DLog(@"Expected status code 200, but got %ld instead.", (long)statusCode);
             return;
@@ -45,7 +46,7 @@ const CGFloat maxImageSize = 200;
                                                        
         [[NSOperationQueue mainQueue] addOperationWithBlock: ^{
             
-            // Set appIcon and clear temporary data/image
+            // Set image and clear temporary data/image
             UIImage *image = [[UIImage alloc] initWithData:data];
             
             if (image.size.width > maxImageSize || image.size.height > maxImageSize) {
@@ -59,7 +60,7 @@ const CGFloat maxImageSize = 200;
                 self.busStop.image = image;
             }
             
-            // Call our completion handler to tell our client that our icon is ready for display
+            // Call our completion handler to tell our client that our image is ready for display
             if (self.completionHandler != nil) {
                 self.completionHandler();
             }
