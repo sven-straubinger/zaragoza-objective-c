@@ -19,3 +19,4 @@ You need to install [CocoaPods](https://cocoapods.org) to get started.
 * extend tests: mock HTTP requests by an own, [canned implementation of NSURLProtocol](http://www.infinite-loop.dk/blog/2011/09/using-nsurlprotocol-for-injecting-test-data/)
 * sort bus stops by distance to user location
 * refactor ImageDownloader to use AFNetworking
+* review AFNetworking leaks (Instruments)
