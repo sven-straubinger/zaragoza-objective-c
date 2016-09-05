@@ -12,7 +12,7 @@
 #import "ZAImageDownloader.h"
 #import "ZABusStop.h"
 
-#define kAppIconSize 90
+const CGFloat maxImageSize = 200;
 
 @interface ZAImageDownloader ()
 
@@ -31,14 +31,15 @@
                         completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
     
         NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
-                                                       
+                   
+        // Early returns
         if (error != nil) {
             DLog(@"%@", error.localizedDescription);
             return;
         }
                                                        
         if(statusCode != 200) {
-            DLog(@"Status code was not ok 200");
+            DLog(@"Expected status code 200, but got %ld instead.", (long)statusCode);
             return;
         }
                                                        
@@ -47,8 +48,8 @@
             // Set appIcon and clear temporary data/image
             UIImage *image = [[UIImage alloc] initWithData:data];
             
-            if (image.size.width != kAppIconSize || image.size.height != kAppIconSize) {
-                CGSize itemSize = CGSizeMake(kAppIconSize, kAppIconSize);
+            if (image.size.width > maxImageSize || image.size.height > maxImageSize) {
+                CGSize itemSize = CGSizeMake(maxImageSize, maxImageSize);
                 UIGraphicsBeginImageContextWithOptions(itemSize, NO, 0.0f);
                 CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
                 [image drawInRect:imageRect];
