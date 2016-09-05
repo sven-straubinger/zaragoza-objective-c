@@ -1,0 +1,22 @@
+//
+//  zaragoza_Prefix.pch
+//  zaragoza
+//
+//  Created by Sven Straubinger on 05/09/16.
+//  Copyright © 2016 Sven Straubinger. All rights reserved.
+//
+
+#ifndef zaragoza_pch
+#define zaragoza_pch
+
+#ifdef __OBJC__
+
+#ifdef DEBUG
+#define DLog( s, ... ) NSLog( @"<%p %@:(%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#else
+#define DLog( s, ... )
+#endif
+
+#endif
+
+#endif /* zaragoza_pch */

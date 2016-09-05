@@ -183,7 +183,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
                          [cell.etaLabel setText:[NSString stringWithFormat:@"%ld Minutes", estimate.estimate]];
                          
                      } failureBlock:^(NSString *errorMessage) {
-                         NSLog(@"%@", errorMessage);
+                         DLog(@"%@", errorMessage);
                          
                          // Update UI, completion block runs on the main thread
                          ZAStopTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];

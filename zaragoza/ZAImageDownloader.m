@@ -33,12 +33,12 @@
         NSInteger statusCode = [(NSHTTPURLResponse *)response statusCode];
                                                        
         if (error != nil) {
-            NSLog(@"%@", error.localizedDescription);
+            DLog(@"%@", error.localizedDescription);
             return;
         }
                                                        
         if(statusCode != 200) {
-            NSLog(@"Status code was not ok 200");
+            DLog(@"Status code was not ok 200");
             return;
         }
                                                        
