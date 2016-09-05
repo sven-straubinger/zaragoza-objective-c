@@ -167,7 +167,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
                                  [cell.mapImageView setAlpha:1.0];
                              }];
             
-            // Remove the ImageDownloade from the in progress list.
+            // Remove the ImageDownloader from the progress list.
             // This will result in it being deallocated.
             [self.imageDownloadsInProgress removeObjectForKey:indexPath];
             
