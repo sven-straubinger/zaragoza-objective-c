@@ -10,8 +10,9 @@
 #import "ZABusStop.h"
 #import "ZAImageDownloader.h"
 #import "ZAStopTableViewCell.h"
-#import "UIAlertController+Collections.h"
 #import "ZAApiService.h"
+#import "UIAlertController+Collections.h"
+#import "UIScrollView+Helper.h"
 
 static NSString *kCellIdentifier = @"StopTableViewCell";
 
@@ -108,13 +109,15 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ZAStopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier
                                                             forIndexPath:indexPath];
+    
+    // Fill cells
     ZABusStop *busStop = [self.busStops objectAtIndex:indexPath.row];
     cell.identifierLabel.text = busStop.identifier;
     cell.nameLabel.text = busStop.name;
     
     // Only display cached images, defer new downloads until scrolling ends
     if (!busStop.image) {
-        if (self.tableView.dragging == NO && self.tableView.decelerating == NO) {
+        if ([self.tableView isScrollEnding]) {
             [self startImageDownload:busStop forIndexPath:indexPath];
         }
         // If a download is deferred or in progress, return a placeholder image
@@ -124,7 +127,7 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
     }
     
     if(!busStop.estimate) {
-        if (self.tableView.dragging == NO && self.tableView.decelerating == NO) {
+        if ([self.tableView isScrollEnding]) {
             [self startEstimateDownload:busStop forIndexPath:indexPath];
         }
         cell.etaLabel.text = @"Loading ...";

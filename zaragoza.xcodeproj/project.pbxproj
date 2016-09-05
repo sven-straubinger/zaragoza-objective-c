@@ -15,6 +15,7 @@
 		262862011D781D7B004FBBC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262861FF1D781D7B004FBBC5 /* LaunchScreen.storyboard */; };
 		2628620C1D781D7B004FBBC5 /* overviewViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2628620B1D781D7B004FBBC5 /* overviewViewControllerTests.m */; };
 		262862171D781D7B004FBBC5 /* zaragozaUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 262862161D781D7B004FBBC5 /* zaragozaUITests.m */; };
+		26BAED761D7D3DF400C601AB /* UIScrollView+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BAED751D7D3DF400C601AB /* UIScrollView+Helper.m */; };
 		26DBD3FF1D7836EB00A4630A /* ZAStopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DBD3FE1D7836EB00A4630A /* ZAStopTableViewCell.m */; };
 		26DBD4071D78885000A4630A /* ZABusStop.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DBD4061D78885000A4630A /* ZABusStop.m */; };
 		26DCA4411D7C651A00B8F757 /* rootViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 26DCA4401D7C651A00B8F757 /* rootViewControllerTest.m */; };
@@ -60,6 +61,8 @@
 		262862121D781D7B004FBBC5 /* zaragozaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = zaragozaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		262862161D781D7B004FBBC5 /* zaragozaUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = zaragozaUITests.m; sourceTree = "<group>"; };
 		262862181D781D7B004FBBC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26BAED741D7D3DF400C601AB /* UIScrollView+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Helper.h"; sourceTree = "<group>"; };
+		26BAED751D7D3DF400C601AB /* UIScrollView+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Helper.m"; sourceTree = "<group>"; };
 		26DBD3FD1D7836EB00A4630A /* ZAStopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAStopTableViewCell.h; sourceTree = "<group>"; };
 		26DBD3FE1D7836EB00A4630A /* ZAStopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAStopTableViewCell.m; sourceTree = "<group>"; };
 		26DBD4051D78885000A4630A /* ZABusStop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZABusStop.h; sourceTree = "<group>"; };
@@ -220,6 +223,8 @@
 			children = (
 				26EFDE8B1D7CA8B600944B54 /* UIAlertController+Collections.h */,
 				26EFDE8C1D7CA8B600944B54 /* UIAlertController+Collections.m */,
+				26BAED741D7D3DF400C601AB /* UIScrollView+Helper.h */,
+				26BAED751D7D3DF400C601AB /* UIScrollView+Helper.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -500,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26EFDE971D7CB2FD00944B54 /* ZAEstimate.m in Sources */,
+				26BAED761D7D3DF400C601AB /* UIScrollView+Helper.m in Sources */,
 				26DBD4071D78885000A4630A /* ZABusStop.m in Sources */,
 				26EFDE871D7C860000944B54 /* ZAImageDownloader.m in Sources */,
 				26EFDE8D1D7CA8B600944B54 /* UIAlertController+Collections.m in Sources */,
