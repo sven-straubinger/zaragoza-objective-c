@@ -107,6 +107,8 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // Re-use cell
     ZAStopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier
                                                             forIndexPath:indexPath];
     
@@ -115,23 +117,27 @@ static NSString *kCellIdentifier = @"StopTableViewCell";
     cell.identifierLabel.text = busStop.identifier;
     cell.nameLabel.text = busStop.name;
     
-    // Only display cached images, defer new downloads until scrolling ends
+    // Display cached images (if available) or defer new downloads until scrolling ends
     if (!busStop.image) {
         if ([self.tableView isScrollEnding]) {
             [self startImageDownload:busStop forIndexPath:indexPath];
         }
-        // If a download is deferred or in progress, return a placeholder image
+        // No image available ATM, nilify to clear images by re-used cells
         cell.mapImageView.image = nil;
     } else {
+        // Set cached image
         cell.mapImageView.image = busStop.image;
     }
     
+    // Display ETA data (if available) or defer new data download until scrolling ends
     if(!busStop.estimate) {
         if ([self.tableView isScrollEnding]) {
             [self startEstimateDownload:busStop forIndexPath:indexPath];
         }
+        // No data available ATM, show loading hint
         cell.etaLabel.text = @"Loading ...";
     } else {
+        // Set cached estiamte
         [cell.etaLabel setText:[NSString stringWithFormat:@"%ld Minutes", busStop.estimate.estimate]];
     }
     
