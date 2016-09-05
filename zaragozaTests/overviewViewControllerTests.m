@@ -23,17 +23,12 @@
     // Load view controller from storyboard
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"ZAOverviewViewController"];
-#warning Is `loadView` needed?
     [self.viewController performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];
 }
 
 - (void)tearDown {
     self.viewController = nil;
     [super tearDown];
-}
-
-- (void)DISABLE_testKindOfClass {
-    XCTAssertTrue([self.viewController isKindOfClass:[ZAOverviewViewController class]]);
 }
 
 - (void)testThatViewLoads {
@@ -45,7 +40,6 @@
     XCTAssertTrue([subviews containsObject:self.viewController.tableView]);
 }
 
-#warning Review performance test
 - (void)DISABLE_testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{
